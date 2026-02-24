@@ -16,6 +16,10 @@ public class PlayerData : ScriptableObject
     
     [Header("Jump")]
     public float jumpForce;
+    [Range(0.01f, 0.5f)] public float coyoteTime;
+    [Range(0.01f, 0.5f)] public float jumpInputBufferTime;
+    //Grace period after falling off a platform, where you can still jump
+
 
 
     private void OnValidate()
