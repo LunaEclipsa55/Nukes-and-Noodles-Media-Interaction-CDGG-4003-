@@ -3,6 +3,9 @@
  - add animations
  - create levitating ability 
  */
+
+
+// FOR THIS SCRIPT TO WORK THE GROUND THAT THE PLAYER IS ON NEED TO BE ON THE GROUND LAYER
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -32,8 +35,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Run();
-        
-        
     }
 
     private void Awake()
@@ -42,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnEnable()
     {
-        
         jump.action.Enable();
         jump.action.performed += OnJump;
     }
@@ -52,11 +52,7 @@ public class PlayerMovement : MonoBehaviour
         jump.action.performed -= OnJump;
         jump.action.Disable();
     }
-    void Start()
-    {
-        
-    }
-
+    
     void Update()
     {
         
@@ -71,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics2D.OverlapBox(groundCheckPoint.position, groundCheckSize, 0, groundLayer))
         {
             LastOnGroundTime = Data.coyoteTime;
+            isJumping = false;
 
         }
 
