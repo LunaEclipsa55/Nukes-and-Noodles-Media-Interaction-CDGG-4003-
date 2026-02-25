@@ -2,32 +2,16 @@ using UnityEngine;
 
 public class Abilities : MonoBehaviour
 {
-    public int damage = 10;
-    public float life = 5f;
-
-    Rigidbody2D rb;
-    bool hit;
-
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous; // Use Continuous for fast-moving objects
-        rb.interpolation = RigidbodyInterpolation2D.Interpolate; // Smooth out movement
-    }
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()//awake?
     {
-        Destroy(gameObject, life);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Gun();
-        }
+        
     }
 
     void Gun()//maybe it own script instead of here?
