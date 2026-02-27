@@ -1026,7 +1026,7 @@
 			"__cHei": 25,
 			"identifier": "Tiles_32x32",
 			"uid": 6,
-			"relPath": "The Sidescroller's Forest - Tileset [32x32]/The Sidescroller's Forest - Tileset [32x32]/Tiles 32x32.png",
+			"relPath": "Tileset [32x32]/The Sidescroller's Forest - Tileset [32x32]/Tiles 32x32.png",
 			"embedAtlas": null,
 			"pxWid": 960,
 			"pxHei": 800,
