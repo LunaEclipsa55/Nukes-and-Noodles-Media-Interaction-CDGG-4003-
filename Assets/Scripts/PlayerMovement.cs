@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public float LastPressedJumpTime { get; private set; }
 
     private bool isJumping;
+    public bool isFacingRight = true;
 
 
     [SerializeField] private InputActionReference move;
@@ -30,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 groundCheckSize = new Vector2(0.49f, 0.03f);
     [SerializeField] private LayerMask groundLayer;
 
-    
+    //Animator 
+    [SerializeField] private Animator _animator;
 
     private void FixedUpdate()
     {
@@ -59,6 +61,15 @@ public class PlayerMovement : MonoBehaviour
         // Read movement input
         moveDirection = move.action.ReadValue<Vector2>();
 
+        if (moveDirection != Vector2.zero)
+        {
+            _animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            _animator.SetBool("isRunning", false);
+        }
+
         // Tick timers
         LastOnGroundTime -= Time.deltaTime;
         LastPressedJumpTime -= Time.deltaTime;
@@ -81,12 +92,21 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
             
+        if (moveDirection.x < 0 && isFacingRight)
+        {
+            Flip();
+        }
+        else if (moveDirection.x > 0 && !isFacingRight)
+        {
+            Flip();
+        }
 
         
     }
 
     private void Run()
-    {
+    {   
+        
         float targetSpeed = moveDirection.x * Data.runMaxSpeed;
 
         float accelRate;
@@ -99,6 +119,12 @@ public class PlayerMovement : MonoBehaviour
         float speedDif = targetSpeed - rb.linearVelocity.x;
         float movement = speedDif * accelRate;        
         rb.AddForce(movement * Vector2.right);
+    }
+    
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
 
     private void Jump()
@@ -130,6 +156,14 @@ public class PlayerMovement : MonoBehaviour
         {
             LastPressedJumpTime = Data.jumpInputBufferTime;
 
+        }
+    }
+    
+    private void OnActionTriggered(InputAction.CallbackContext ctx)
+    {
+        if (ctx.action.name == "Horizontal")
+        {
+            
         }
     }
 
