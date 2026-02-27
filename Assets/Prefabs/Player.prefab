@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8220974825177144914}
   - component: {fileID: 1605188895900802262}
   - component: {fileID: 1543359517903929340}
+  - component: {fileID: 6498212979787634097}
   - component: {fileID: 5850544825930813017}
   - component: {fileID: 4744520089388528251}
   - component: {fileID: 7395789300645674084}
@@ -99,6 +100,24 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &6498212979787634097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042402709363531933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b58cd33690b0a4d8f832bf1e445d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  firePoint: {fileID: 0}
+  bulletSpeed: 5
+  fireCool: 0.2
+  enableMouse: 1
+  aimAtMouse: 1
 --- !u!50 &5850544825930813017
 Rigidbody2D:
   serializedVersion: 5
