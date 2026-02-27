@@ -17,26 +17,26 @@ public class Abilities : MonoBehaviour
     public float fireCool = 0.2f;
     public bool enableMouse = true;
 
-    public bool aimAtMouse = true;
+    public bool aimAtMouse = false;
 
     float nextFireTime;
     static int lastShotFrame = -1;
 
     Dictionary<string, Bullets> ammoMap = new();
-    string currentAmmo;
+    //string currentAmmo;
     Bullets currentBullet;
 
-    void Awake()
-    {
-        if (bullet) ammoMap["Ammo"] = bullet;
-        //if (yellow) ammoMap["Ammo Yellow"] = yellow;
-        //if (green) ammoMap["Ammo Green"] = green;
+    //void Awake()
+    //{
+    //    if (bullet) ammoMap["Ammo"] = bullet;
+    //    if (yellow) ammoMap["Ammo Yellow"] = yellow;
+    //    if (green) ammoMap["Ammo Green"] = green;
 
-        //if (extra != null)
-        //    foreach (var e in extra)
-        //        if (!string.IsNullOrEmpty(e.name) && e.prefab)
-        //            ammoMap[e.name] = e.prefab;
-    }
+    //    if (extra != null)
+    //        foreach (var e in extra)
+    //            if (!string.IsNullOrEmpty(e.name) && e.prefab)
+    //                ammoMap[e.name] = e.prefab;
+    //}
 
     // Update is called once per frame
     void Update()
@@ -45,34 +45,35 @@ public class Abilities : MonoBehaviour
             TryFire();
     }
 
-    Bullets TryAutoLoad(string ammoName)
+    //Bullets TryAutoLoad(string ammoName)
+    //{
+    //    var pb = Resources.Load<Bullets>($"Projectiles/{ammoName}");
+    //    if (pb) ammoMap[ammoName] = pb;
+    //    return pb;
+    //}
+
+    //public void Equip(string ammoName)
+    //{
+    //    if (!ammoMap.TryGetValue(ammoName, out var pb) || !pb)
+    //        pb = TryAutoLoad(ammoName);
+
+    //    if (!pb)
+    //    {
+    //        Debug.LogError($"[Gun2D] Equip failed for '{ammoName}'.");
+    //        return;
+    //    }
+
+    //    currentAmmo = ammoName;
+    //    currentBullet = pb;
+    //}
+
+    public void TryFire()
     {
-        var pb = Resources.Load<Bullets>($"Projectiles/{ammoName}");
-        if (pb) ammoMap[ammoName] = pb;
-        return pb;
-    }
-
-    public void Equip(string ammoName)
-    {
-        if (!ammoMap.TryGetValue(ammoName, out var pb) || !pb)
-            pb = TryAutoLoad(ammoName);
-
-        if (!pb)
-        {
-            Debug.LogError($"[Gun2D] Equip failed for '{ammoName}'.");
-            return;
-        }
-
-        currentAmmo = ammoName;
-        currentBullet = pb;
-    }
-
-    public bool TryFire()
-    {
-        if (!currentBullet || string.IsNullOrEmpty(currentAmmo)) return false;
-        if (!firePoint) return false;
-        if (Time.time < nextFireTime) return false;
-        if (Time.frameCount == lastShotFrame) return false;
+        Debug.Log("Trying to fire...");
+        //if (!currentBullet || string.IsNullOrEmpty(currentAmmo)) return false;
+        if (!firePoint) return;
+        if (Time.time < nextFireTime) return;
+        //if (Time.frameCount == lastShotFrame) return false;
 
         //var inv = Inventory.Instance;
         //if (!inv || inv.AmountInInventory(currentAmmo) <= 0) return false;
@@ -106,9 +107,9 @@ public class Abilities : MonoBehaviour
 
         //inv.RemoveFromInventory(1, currentAmmo);
 
-        lastShotFrame = Time.frameCount;
+        //lastShotFrame = Time.frameCount;
         nextFireTime = Time.time + fireCool;
-        return true;
+        //return true;
     }
 
         //for enemy helath maybe
