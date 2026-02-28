@@ -6,9 +6,9 @@ using static UnityEngine.EventSystems.EventTrigger;
 public class Abilities : MonoBehaviour
 {
     [Header("Ammo Prefabs")]
-    public Bullets bullet;
-    //public PlayerBullet yellow;
-    //public PlayerBullet green;
+    public Bullets red;
+    public Bullets yellow;
+    public Bullets purple;
     //public AmmoEntry[] extra;
 
     [Header("Firing")]
@@ -23,20 +23,20 @@ public class Abilities : MonoBehaviour
     static int lastShotFrame = -1;
 
     Dictionary<string, Bullets> ammoMap = new();
-    //string currentAmmo;
+    string currentAmmo;
     Bullets currentBullet;
 
-    //void Awake()
-    //{
-    //    if (bullet) ammoMap["Ammo"] = bullet;
-    //    if (yellow) ammoMap["Ammo Yellow"] = yellow;
-    //    if (green) ammoMap["Ammo Green"] = green;
+    void Awake()
+    {
+        if (red) ammoMap["Ammo"] = red;
+        if (yellow) ammoMap["Ammo Yellow"] = yellow;
+        if (purple) ammoMap["Ammo Green"] = purple;
 
-    //    if (extra != null)
-    //        foreach (var e in extra)
-    //            if (!string.IsNullOrEmpty(e.name) && e.prefab)
-    //                ammoMap[e.name] = e.prefab;
-    //}
+        //if (extra != null)
+        //    foreach (var e in extra)
+        //        if (!string.IsNullOrEmpty(e.name) && e.prefab)
+        //            ammoMap[e.name] = e.prefab;
+    }
 
     // Update is called once per frame
     void Update()
@@ -45,38 +45,38 @@ public class Abilities : MonoBehaviour
             TryFire();
     }
 
-    //Bullets TryAutoLoad(string ammoName)
-    //{
-    //    var pb = Resources.Load<Bullets>($"Projectiles/{ammoName}");
-    //    if (pb) ammoMap[ammoName] = pb;
-    //    return pb;
-    //}
+    Bullets TryAutoLoad(string ammoName)
+    {
+        var pb = Resources.Load<Bullets>($"Projectiles/{ammoName}");
+        if (pb) ammoMap[ammoName] = pb;
+        return pb;
+    }
 
-    //public void Equip(string ammoName)
-    //{
-    //    if (!ammoMap.TryGetValue(ammoName, out var pb) || !pb)
-    //        pb = TryAutoLoad(ammoName);
+    public void Equip(string ammoName)
+    {
+        if (!ammoMap.TryGetValue(ammoName, out var pb) || !pb)
+            pb = TryAutoLoad(ammoName);
 
-    //    if (!pb)
-    //    {
-    //        Debug.LogError($"[Gun2D] Equip failed for '{ammoName}'.");
-    //        return;
-    //    }
+        if (!pb)
+        {
+            Debug.LogError($"[Gun2D] Equip failed for '{ammoName}'.");
+            return;
+        }
 
-    //    currentAmmo = ammoName;
-    //    currentBullet = pb;
-    //}
+        currentAmmo = ammoName;
+        currentBullet = pb;
+    }
 
-    public void TryFire()
+    public bool TryFire()
     {
         Debug.Log("Trying to fire...");
-        //if (!currentBullet || string.IsNullOrEmpty(currentAmmo)) return false;
-        if (!firePoint) return;
-        if (Time.time < nextFireTime) return;
-        //if (Time.frameCount == lastShotFrame) return false;
+        if (!currentBullet || string.IsNullOrEmpty(currentAmmo)) return false;
+        if (!firePoint) return false;
+        if (Time.time < nextFireTime) return false;
+        if (Time.frameCount == lastShotFrame) return false;
 
-        //var inv = Inventory.Instance;
-        //if (!inv || inv.AmountInInventory(currentAmmo) <= 0) return false;
+        var inv = Inventory.Instance;
+        if (!inv || inv.AmountInInventory(currentAmmo) <= 0) return false;
 
         // Direction (2D)
         Vector2 dir = firePoint.right; // default for 2D (sprite facing right)
@@ -105,10 +105,10 @@ public class Abilities : MonoBehaviour
         // launch (2D): pass velocity vector
         bullet.Launch(dir * bulletSpeed);
 
-        //inv.RemoveFromInventory(1, currentAmmo);
+        inv.RemoveFromInventory(1, currentAmmo);
 
-        //lastShotFrame = Time.frameCount;
+        lastShotFrame = Time.frameCount;
         nextFireTime = Time.time + fireCool;
-        //return true;
+        return true;
     }
 }

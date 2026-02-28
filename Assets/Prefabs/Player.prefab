@@ -113,7 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b58cd33690b0a4d8f832bf1e445d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  red: {fileID: 2632138569884641840, guid: ea921f5c592a0a04db5c2511776e49b7, type: 3}
+  yellow: {fileID: 4190682281528150430, guid: fbfa1440fc20f6b4cb52b60c5834c7f5, type: 3}
+  purple: {fileID: 7527947917940086314, guid: 19b3983636749e74e915634fcfef87bd, type: 3}
   firePoint: {fileID: 0}
   bulletSpeed: 5
   fireCool: 0.2
