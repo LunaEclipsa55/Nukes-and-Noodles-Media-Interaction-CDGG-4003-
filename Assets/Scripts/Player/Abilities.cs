@@ -111,23 +111,4 @@ public class Abilities : MonoBehaviour
         nextFireTime = Time.time + fireCool;
         //return true;
     }
-
-        //for enemy helath maybe
-        //void OnTriggerEnter(Collider other)
-        //{
-        //    if (other.CompareTag("Player"))//enemy
-        //    {
-        //        // Implement ability logic here, e.g., granting a power-up or triggering an effect
-        //        Debug.Log("Player has entered the ability trigger!");
-        //    }
-        //}
-
-        //void OnCollisionEnter(Collision collision)
-        //{
-        //    if (collision.gameObject.CompareTag("Player"))
-        //    {
-        //        // Implement ability logic here, e.g., granting a power-up or triggering an effect
-        //        Debug.Log("Player has collided with the ability object!");
-        //    }
-        //}
 }
