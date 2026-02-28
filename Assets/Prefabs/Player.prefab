@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1605188895900802262}
   - component: {fileID: 1543359517903929340}
   - component: {fileID: 6498212979787634097}
+  - component: {fileID: 4061733723357922831}
   - component: {fileID: 5850544825930813017}
   - component: {fileID: 4744520089388528251}
   - component: {fileID: 7395789300645674084}
@@ -118,6 +119,40 @@ MonoBehaviour:
   fireCool: 0.2
   enableMouse: 1
   aimAtMouse: 1
+--- !u!114 &4061733723357922831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042402709363531933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f3cca6da0b31f4085458830112ba92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleInventoryKey: 105
+  hubKey: 0
+  maxUnique: 4
+  showInventory: 0
+  showhud: 0
+  invRect:
+    serializedVersion: 2
+    x: 189
+    y: 37
+    width: 680
+    height: 300
+  quickRect:
+    serializedVersion: 2
+    x: 20
+    y: 833
+    width: 520
+    height: 80
+  quickbar:
+  - Empty
+  - Empty
+  - Empty
+  - Empty
 --- !u!50 &5850544825930813017
 Rigidbody2D:
   serializedVersion: 5
