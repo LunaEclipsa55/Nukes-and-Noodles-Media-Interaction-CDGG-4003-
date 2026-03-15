@@ -8,19 +8,20 @@ public class PickUp : MonoBehaviour
 
     void Reset()  // auto-fix common setup
     {
-        var col = GetComponent<Collider>() ?? gameObject.AddComponent<SphereCollider>();
+        var col = GetComponent<Collider2D>() ?? gameObject.AddComponent<CircleCollider2D>();
         col.isTrigger = true;
 
-        var rb = GetComponent<Rigidbody>() ?? gameObject.AddComponent<Rigidbody>();
-        rb.isKinematic = true; // required so triggers fire with CharacterController players
+        var rb = GetComponent<Rigidbody2D>() ?? gameObject.AddComponent<Rigidbody2D>();
+        rb.bodyType = RigidbodyType2D.Kinematic; // required so triggers fire with CharacterController players
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
-        var inv = Inventory.Instance ?? FindFirstObjectByType<Inventory>();
-        if (!inv) return;
+        var inv = Inventory.Instance;
+        if (!inv) return; 
+
 
         bool added = inv.AddToInventory(amount, itemName);
         if (added && destroyOnPickup)

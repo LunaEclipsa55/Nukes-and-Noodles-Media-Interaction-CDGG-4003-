@@ -45,20 +45,20 @@ public class Bullets : MonoBehaviour
             Debug.Log("Player has entered the ability trigger!");
         }
 
-        if (other.CompareTag("Enemy"))
-        {
-            //var enemyHealth = other.GetComponentInParent<EnemyHealth>();
-            //if (enemyHealth != null)
-            //{
-            //    enemyHealth.TakeDamage(damage);
-            //}
+        // if (other.CompareTag("Enemy"))
+        // {
+        //     //var enemyHealth = other.GetComponentInParent<EnemyHealth>();
+        //     //if (enemyHealth != null)
+        //     //{
+        //     //    enemyHealth.TakeDamage(damage);
+        //     //}
 
-            Destroy(gameObject);
-        }
-        else if (other.CompareTag("Friend"))
-        {
-            Destroy(gameObject);
-        }
+        //     Destroy(gameObject);
+        // }
+        // else if (other.CompareTag("Friend"))
+        // {
+        //     Destroy(gameObject);
+        // }
     }
 
     public void Launch(Vector2 direction)

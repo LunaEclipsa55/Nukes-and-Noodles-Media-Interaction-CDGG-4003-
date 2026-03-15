@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1543359517903929340}
   - component: {fileID: 6498212979787634097}
   - component: {fileID: 4061733723357922831}
+  - component: {fileID: 1171567736047732157}
   - component: {fileID: 5850544825930813017}
   - component: {fileID: 4744520089388528251}
   - component: {fileID: 7395789300645674084}
@@ -133,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f3cca6da0b31f4085458830112ba92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStats: {fileID: 1171567736047732157}
+  playerGun: {fileID: 6498212979787634097}
   toggleInventoryKey: 105
   hubKey: 0
   maxUnique: 4
@@ -155,6 +158,20 @@ MonoBehaviour:
   - Empty
   - Empty
   - Empty
+--- !u!114 &1171567736047732157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042402709363531933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d9a7fac68da7a4295bc7618c5f5147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthMax: 100
 --- !u!50 &5850544825930813017
 Rigidbody2D:
   serializedVersion: 5

@@ -12,8 +12,8 @@ public class Inventory : MonoBehaviour
     public static Inventory Instance { get; private set; }
 
     [Header("Player References (for item effects)")]
-    //public PlayerStats playerStats;
-    //public Gun playerGun;
+    public PlayerStats playerStats;
+    public Abilities playerGun;
 
     [Header("Inventory Settings")]
     public KeyCode toggleInventoryKey = KeyCode.I;
@@ -51,8 +51,8 @@ public class Inventory : MonoBehaviour
     {
         showInventory = false;
         showhud = true;
-        //if (playerStats == null) playerStats = FindFirstObjectByType<PlayerStats>();
-        //if (playerGun == null) playerGun = FindFirstObjectByType<Gun>();
+        if (playerStats == null) playerStats = FindFirstObjectByType<PlayerStats>();
+        if (playerGun == null) playerGun = FindFirstObjectByType<Abilities>();
     }
 
     // Update is called once per frame
@@ -177,8 +177,8 @@ public class Inventory : MonoBehaviour
 
     bool ApplyItemEffect(string name)
     {
-        //if (playerStats == null) playerStats = FindFirstObjectByType<PlayerStats>();
-        //if (playerGun == null) playerGun = FindFirstObjectByType<Gun>();
+        if (playerStats == null) playerStats = FindFirstObjectByType<PlayerStats>();
+        if (playerGun == null) playerGun = FindFirstObjectByType<Abilities>();
 
         if (name == "Health10" || name == "Health20" || name == "Health30")
         {
@@ -195,25 +195,25 @@ public class Inventory : MonoBehaviour
             return false;
         }
 
-        //no consume on equip, but if it fails (no gun) then don’t consume
-        //if (name == "Ammo Red" || name == "Ammo Green" || name == "Ammo Yellow")
-        //{
-        //    if (playerGun)
-        //    {
-        //        playerGun.Equip(name);
-        //        ShowPopup($"Equipped {name} ammo");
-        //        return false;
-        //    }
-        //    return false;
-        //}
+        //no consume on equip, but if it fails (no gun) then donï¿½t consume
+        if (name == "Ammo Red" || name == "Ammo Purple" || name == "Ammo Yellow")
+        {
+           if (playerGun)
+           {
+               playerGun.Equip(name);
+               ShowPopup($"Equipped {name} ammo");
+               return false;
+           }
+           return false;
+        }
         return false;
     }
 
     bool HealIfPossible(int amount)
     {
-        //if (!playerStats) return false;
-        //if (playerStats.health >= playerStats.healthMax) return false; // don’t waste it
-        //playerStats.Heal(amount);
+        if (!playerStats) return false;
+        if (playerStats.health >= playerStats.healthMax) return false; // donï¿½t waste it
+        playerStats.Heal(amount);
         return true;
     }
 

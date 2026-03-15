@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6192931670222115021}
   - component: {fileID: 860368379012286321}
   - component: {fileID: 2632138569884641840}
+  - component: {fileID: 6306650637052683526}
   m_Layer: 7
   m_Name: Red Bullet
   m_TagString: Bullet
@@ -120,7 +121,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -134,7 +135,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4480699972475217729}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -167,3 +168,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   life: 5
+--- !u!114 &6306650637052683526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480699972475217729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45dfd076e2a95c241ba62335ac44a4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Ammo Red
+  amount: 10
+  destroyOnPickup: 1

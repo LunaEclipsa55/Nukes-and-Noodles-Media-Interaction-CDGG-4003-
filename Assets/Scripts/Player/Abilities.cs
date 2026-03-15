@@ -13,7 +13,7 @@ public class Abilities : MonoBehaviour
 
     [Header("Firing")]
     public Transform firePoint;
-    public float bulletSpeed = 20f;
+    public float bulletSpeed = 5f;
     public float fireCool = 0.2f;
     public bool enableMouse = true;
 
@@ -28,11 +28,11 @@ public class Abilities : MonoBehaviour
 
     void Awake()
     {
-        if (red) ammoMap["Ammo"] = red;
+        if (red) ammoMap["Ammo Red"] = red;
         if (yellow) ammoMap["Ammo Yellow"] = yellow;
-        if (purple) ammoMap["Ammo Green"] = purple;
+        if (purple) ammoMap["Ammo Purple"] = purple;
 
-        //if (extra != null)
+        // if (extra != null)
         //    foreach (var e in extra)
         //        if (!string.IsNullOrEmpty(e.name) && e.prefab)
         //            ammoMap[e.name] = e.prefab;
@@ -59,7 +59,6 @@ public class Abilities : MonoBehaviour
 
         if (!pb)
         {
-            Debug.LogError($"[Gun2D] Equip failed for '{ammoName}'.");
             return;
         }
 
@@ -69,7 +68,6 @@ public class Abilities : MonoBehaviour
 
     public bool TryFire()
     {
-        Debug.Log("Trying to fire...");
         if (!currentBullet || string.IsNullOrEmpty(currentAmmo)) return false;
         if (!firePoint) return false;
         if (Time.time < nextFireTime) return false;
