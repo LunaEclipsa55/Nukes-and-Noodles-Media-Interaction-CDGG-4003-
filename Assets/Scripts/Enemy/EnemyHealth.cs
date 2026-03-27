@@ -26,7 +26,7 @@ public class EnemyHealth : MonoBehaviour
         Health -= amount;
         if (Health < 0) Health = 0;
 
-        Debug.log($"{gameObject.name} took {amount} damage.");
+        Debug.Log($"{gameObject.name} took {amount} damage.");
 
         if (Health <= 0) Die();
     }
@@ -34,6 +34,6 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         if(death) Destroy(gameObject);
-        debug.log($"{gameObject.name} dies.");
+        Debug.Log($"{gameObject.name} dies.");
     }
 }
