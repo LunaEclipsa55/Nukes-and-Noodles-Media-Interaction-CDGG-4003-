@@ -784,7 +784,34 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spear Trap 2 32x64_0: -3037254632345346748
+      Spear Trap 2 32x64_1: -1495795549203271865
+      Spear Trap 2 32x64_10: 6767026755256623499
+      Spear Trap 2 32x64_11: -3862028502731518557
+      Spear Trap 2 32x64_12: -1977310476018732021
+      Spear Trap 2 32x64_13: -1618840480732355400
+      Spear Trap 2 32x64_14: 3427866861422151853
+      Spear Trap 2 32x64_15: -648917146819801748
+      Spear Trap 2 32x64_16: -2264110881684102166
+      Spear Trap 2 32x64_17: -961801595004607132
+      Spear Trap 2 32x64_18: -6618856093112441728
+      Spear Trap 2 32x64_19: -7870501656099435024
+      Spear Trap 2 32x64_2: -8995560363912880954
+      Spear Trap 2 32x64_20: -863853146281430510
+      Spear Trap 2 32x64_21: 8398949873858782324
+      Spear Trap 2 32x64_22: 5333948269531057264
+      Spear Trap 2 32x64_23: -7354963096057911783
+      Spear Trap 2 32x64_24: -4647462289673747295
+      Spear Trap 2 32x64_25: 2580790584968421093
+      Spear Trap 2 32x64_26: -1893888328466921258
+      Spear Trap 2 32x64_3: -5777551665063111607
+      Spear Trap 2 32x64_4: -7002436036961944416
+      Spear Trap 2 32x64_5: 3908231957062092506
+      Spear Trap 2 32x64_6: -1119568845152908783
+      Spear Trap 2 32x64_7: -7637223335324218516
+      Spear Trap 2 32x64_8: -4473021233179722517
+      Spear Trap 2 32x64_9: -3967064810406292457
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

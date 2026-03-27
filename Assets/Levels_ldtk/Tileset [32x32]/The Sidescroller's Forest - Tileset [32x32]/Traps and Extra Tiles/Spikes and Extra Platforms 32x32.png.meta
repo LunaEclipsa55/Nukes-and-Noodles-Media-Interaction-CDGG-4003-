@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spikes and Extra Platforms 32x32_0: 7732068592335952724
+      Spikes and Extra Platforms 32x32_1: -8680727829936003239
+      Spikes and Extra Platforms 32x32_2: -8533897566900811665
+      Spikes and Extra Platforms 32x32_3: -1124570079493429844
+      Spikes and Extra Platforms 32x32_4: 2011544793978118114
+      Spikes and Extra Platforms 32x32_5: 679279714908501065
+      Spikes and Extra Platforms 32x32_6: -6843188663098289757
+      Spikes and Extra Platforms 32x32_7: -2450318114865236736
+      Spikes and Extra Platforms 32x32_8: 5540437715249022116
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
