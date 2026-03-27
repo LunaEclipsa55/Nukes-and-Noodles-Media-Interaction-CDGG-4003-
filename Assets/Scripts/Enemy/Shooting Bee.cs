@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class ShootingBee : MonoBehaviour
 {
+    [Header("Target")]
     public Transform player;
+
+    [Header("Weaponry")]
     public GameObject enemyBullet;
     public Transform firepoint;
+
     public float bulletSpeed = 15f;
     public float shootcool = 2f;
 
@@ -24,7 +28,7 @@ public class ShootingBee : MonoBehaviour
     {
         if(!player) return;
 
-        float d = Vector2.Distance(transform.position, player.position);
+        float d = Vector3.Distance(transform.position, player.position);
         shootTimer -= Time.deltaTime;
 
         if(shootTimer <= 0f)
@@ -43,6 +47,6 @@ public class ShootingBee : MonoBehaviour
         rb.gravityScale = 0; // No gravity for bullets
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous; // Use Continuous for fast-moving objects
         rb.interpolation = RigidbodyInterpolation2D.Interpolate; // Smooth out movement
-        if (rb) rb.linearVelocity = firepoint.forward * bulletSpeed;
+        if (rb) rb.linearVelocity = firepoint.right * bulletSpeed;
     }
 }

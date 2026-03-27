@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 3569791640607122676}
   m_Layer: 0
   m_Name: BeeEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,5 +221,5 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyBullet: {fileID: 4502633482741790679, guid: 77bebaa34cb4aefffbc2588838e3358b, type: 3}
   firepoint: {fileID: 2491094986448554323}
-  bulletSpeed: 10
+  bulletSpeed: 5
   shootcool: 2
