@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        if(death) Destroy(gameObject);
+        if(death) gameObject.SetActive(false);
         Debug.Log($"{gameObject.name} dies.");
     }
 }
