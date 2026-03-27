@@ -584,7 +584,26 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Background Tiles 32x32_0: 2898321573664726504
+      Background Tiles 32x32_1: -9201319605794144997
+      Background Tiles 32x32_10: 5688449872926710454
+      Background Tiles 32x32_11: 1468706890421470857
+      Background Tiles 32x32_12: 2164145472921835455
+      Background Tiles 32x32_13: -4284359706550926887
+      Background Tiles 32x32_14: -5564809480503006131
+      Background Tiles 32x32_15: 5346314743259346193
+      Background Tiles 32x32_16: 6913442065636382498
+      Background Tiles 32x32_17: -4836569386473808984
+      Background Tiles 32x32_18: 1036572436449944059
+      Background Tiles 32x32_2: -5689290050784936947
+      Background Tiles 32x32_3: -6092826278653687568
+      Background Tiles 32x32_4: -4317387133517940903
+      Background Tiles 32x32_5: -5526952535772039092
+      Background Tiles 32x32_6: 6736144271105418901
+      Background Tiles 32x32_7: 8385985422014676332
+      Background Tiles 32x32_8: 4832975837217071733
+      Background Tiles 32x32_9: 413466113911466996
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
