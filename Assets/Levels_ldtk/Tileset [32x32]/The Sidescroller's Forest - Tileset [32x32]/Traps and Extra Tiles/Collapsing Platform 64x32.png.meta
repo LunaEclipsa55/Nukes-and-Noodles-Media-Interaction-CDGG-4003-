@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Collapsing Platform 64x32_0: -6460614264375558176
+      Collapsing Platform 64x32_1: -8602547169207855691
+      Collapsing Platform 64x32_2: 5278444903337728244
+      Collapsing Platform 64x32_3: 2882577813582860343
+      Collapsing Platform 64x32_4: 2453498465541279682
+      Collapsing Platform 64x32_5: 5559555555889229777
+      Collapsing Platform 64x32_6: -2471469384897812226
+      Collapsing Platform 64x32_7: -6023674324906738039
+      Collapsing Platform 64x32_8: -3810786968423343481
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

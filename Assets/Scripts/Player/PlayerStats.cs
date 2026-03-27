@@ -6,15 +6,12 @@ public class PlayerStats : MonoBehaviour
     public int health;
     public int healthMax = 100;
 
-    private void OnEnable()
-    {
-        health = healthMax;
-    }
+    bool isDead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        health = healthMax;
     }
 
     // Update is called once per frame
@@ -42,6 +39,10 @@ public class PlayerStats : MonoBehaviour
 
     void Die()
     {
+        if(isDead) return;
+        
+        Debug.Log("Ded.");
+        isDead = true;
         gameObject.SetActive(false);
         Application.Quit();
     }
