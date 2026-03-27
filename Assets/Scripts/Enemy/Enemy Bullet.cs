@@ -13,15 +13,14 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
-        {
-            //player takes dmage here
-            var stats = other.GetComponent<PlayerStats>();
-            if(!stats) stats = other.GetComponentInParent<PlayerStats>();
-            if(!stats) stats.TakeDamage(damage);
-        }
+        if(!other.CompareTag("Player")) return;
+        //player takes dmage here
+        var stats = other.GetComponentInParent<PlayerStats>();
+        if(stats != null) stats.TakeDamage(damage);
 
-        if(!other.isTrigger) Destroy(gameObject);
+        Debug.Log("working...");
+
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
