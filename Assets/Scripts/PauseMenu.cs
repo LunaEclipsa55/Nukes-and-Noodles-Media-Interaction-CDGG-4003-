@@ -1,11 +1,16 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [Header("Input")]
+    public InputActionReference pauseAction;
+    
+    [Header("UI")]
     [SerializeField] GameObject pauseMenu;
 
-    private bool isPaused;
+    private bool isPaused = false;
 
     void Awake()
     {
@@ -15,36 +20,46 @@ public class PauseMenu : MonoBehaviour
         
     void Start()
     {
-        pauseMenu.SetActive(false);
-            
-            
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
-        {
-            GameObject quitButton;
-            quitButton = GameObject.Find("QuitButton");
-            quitButton.SetActive(false);
-        }
+        isPaused = false;
+        pauseMenu.SetActive(isPaused);
+    }
+    
+    
+    private void OnEnable()
+    {
+        // Subscribe to the action
+        pauseAction.action.performed += OnPausePerformed;
+        pauseAction.action.Enable();
+    }
+    
+    private void OnDisable()
+    {
+        // Unsubscribe to avoid memory leaks
+        pauseAction.action.performed -= OnPausePerformed;
+        pauseAction.action.Disable();
     }
 
-    void Update()
+    private void OnPausePerformed(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused) PauseGame();
-            else ResumeGame();
-        }
+        TogglePause();
+    }
+
+    private void TogglePause()
+    {
+        isPaused = !isPaused;
+        pauseMenu.SetActive(isPaused);
+
+        Time.timeScale = isPaused ? 0f : 1f; // Freeze/unfreeze game time
     }
 
     public void ResumeGame()
     {
-        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
 
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
     }
@@ -63,7 +78,10 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("Capturing");
-    }
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
+        Time.timeScale = 1f;
+        string scene = SceneManager.GetActiveScene().name;
+        
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);    }
 }
 

@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping;
     public static bool isFacingRight = true;
 
-
+    [Header("Input")]
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference jump;
 

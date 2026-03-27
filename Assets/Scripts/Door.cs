@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class Door : MonoBehaviour
 {
     private bool isInsideTrigger = false;
+    
+    [Header("Input")]
     public InputActionReference interact;
 
     void OnTriggerEnter(Collider other)
@@ -15,7 +17,7 @@ public class Door : MonoBehaviour
     {
         if (isInsideTrigger && ctx.performed)
         {
-            
+            Time.timeScale = 0f;
         }
     }
     

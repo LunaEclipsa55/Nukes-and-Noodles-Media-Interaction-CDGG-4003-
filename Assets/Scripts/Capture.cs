@@ -18,6 +18,7 @@ public class Capture : MonoBehaviour
 
     public ScoreManager scoreManager;
     
+    [Header("Input")]
     [SerializeField] private InputActionReference catcher;
     bool laserOn = false;
     
@@ -95,6 +96,8 @@ public class Capture : MonoBehaviour
 
 
                     bool added = inv.AddToInventory(beeAbility.initialAmount, beeAbility.bulletName);
+                    inv.UseItem(beeAbility.bulletName, beeAbility.initialAmount);
+                    // inv.SetQuickItem()
                     if (added)
                     {
                         scoreManager.AddScore(10);
