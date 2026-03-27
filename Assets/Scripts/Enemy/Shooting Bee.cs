@@ -28,7 +28,7 @@ public class ShootingBee : MonoBehaviour
     {
         if(!player) return;
 
-        float d = Vector3.Distance(transform.position, player.position);
+        //float d = Vector3.Distance(transform.position, player.position);
         shootTimer -= Time.deltaTime;
 
         if(shootTimer <= 0f)

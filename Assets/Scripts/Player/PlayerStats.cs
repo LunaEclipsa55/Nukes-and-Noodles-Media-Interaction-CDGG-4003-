@@ -40,7 +40,8 @@ public class PlayerStats : MonoBehaviour
     void Die()
     {
         if(isDead) return;
-        Dubug.Log("Ded.")
+        
+        Debug.Log("Ded.");
         isDead = true;
         gameObject.SetActive(false);
         Application.Quit();

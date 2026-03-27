@@ -8,6 +8,7 @@ public class PunchingLadybug : MonoBehaviour
     [Header("Attack")]
     public int damage = 15;
     public float cooldown = 1.5f;
+    public float attackRange = 1.5f;
 
     float attackTimer;
 
@@ -25,10 +26,12 @@ public class PunchingLadybug : MonoBehaviour
     {
         if(!player) return;
 
-        float d = Vector3.Distance(transform.position, player.position);
+        float d = Vector2.Distance(transform.position, player.position);
         attackTimer -= Time.deltaTime;
 
-        if(attackTimer <= 0f)
+        if(d > attackRange) return;
+
+        if(d <= attackRange && attackTimer <= 0f)
         {
             Punch();
             attackTimer = cooldown;
@@ -37,8 +40,7 @@ public class PunchingLadybug : MonoBehaviour
 
     void Punch()
     {
-        var stats = player.GetComponent<PlayerStats>();
-            if(!stats) stats = player.GetComponentInParent<PlayerStats>();
-            if(!stats) stats.TakeDamage(damage); Debug.Log($"{gameObject.name} punched player for {damage}");
+        var stats = player.GetComponentInParent<PlayerStats>();
+        if(stats != null) stats.TakeDamage(damage); Debug.Log($"{gameObject.name} punched player for {damage}");
     }
 }
