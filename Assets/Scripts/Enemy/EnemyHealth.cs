@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Health = Mathf.Clamp(Health, 0, maxHealth)
+        Health = Mathf.Clamp(Health, 0, maxHealth);
         if (Health == 0) Health = maxHealth;
     }
 
@@ -26,7 +26,7 @@ public class EnemyHealth : MonoBehaviour
         Health -= amount;
         if (Health < 0) Health = 0;
 
-        Debug.log($"{gameObject.name} took {amount} damage.")
+        Debug.log($"{gameObject.name} took {amount} damage.");
 
         if (Health <= 0) Die();
     }
@@ -34,6 +34,6 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         if(death) Destroy(gameObject);
-        debug.log($"{gameObject.name} dies.")
+        debug.log($"{gameObject.name} dies.");
     }
 }

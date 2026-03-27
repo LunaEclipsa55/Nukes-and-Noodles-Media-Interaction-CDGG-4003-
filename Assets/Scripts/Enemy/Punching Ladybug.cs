@@ -3,11 +3,11 @@ using UnityEngine;
 public class PunchingLadybug : MonoBehaviour
 {
     [Header("Target")]
-    public Trasnform player;
+    public Transform player;
     
     [Header("Attack")]
     public int damage = 15;
-    public flaot cooldown = 1.5f;
+    public float cooldown = 1.5f;
 
     float attackTimer;
 
@@ -39,6 +39,6 @@ public class PunchingLadybug : MonoBehaviour
     {
         var stats = player.GetComponent<PlayerStats>();
             if(!stats) stats = player.GetComponentInParent<PlayerStats>();
-            if(!stats) stats.TakeDamage(damage), Debug.Log($"{gameObject.name} punched player for {damage}");
+            if(!stats) stats.TakeDamage(damage); Debug.Log($"{gameObject.name} punched player for {damage}");
     }
 }
