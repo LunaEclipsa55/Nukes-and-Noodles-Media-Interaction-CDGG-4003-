@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public float LastPressedJumpTime { get; private set; }
 
     private bool isJumping;
-    public bool isFacingRight = true;
+    public static bool isFacingRight = true;
 
 
     [SerializeField] private InputActionReference move;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Globalization;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Capture : MonoBehaviour
 {
@@ -14,6 +15,26 @@ public class Capture : MonoBehaviour
     private LineRenderer lineRenderer;
     public Transform startLaser;
     public Transform endLaser;
+
+    public ScoreManager scoreManager;
+    
+    [SerializeField] private InputActionReference catcher;
+    bool laserOn = false;
+    
+    private void OnEnable()
+    {
+        catcher.action.Enable();
+        catcher.action.performed += OnCatch;
+    }
+
+    private void OnDisable()
+    {
+        
+
+        catcher.action.performed -= OnCatch;
+        catcher.action.Disable();
+    }
+
     void Start()
     {
         lineRenderer = GetComponentInChildren<LineRenderer>();
@@ -29,19 +50,34 @@ public class Capture : MonoBehaviour
         lineRenderer.SetPosition(0, startLaser.position);
         lineRenderer.SetPosition(1, endLaser.position);
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            StartCoroutine(CaptureLaser()); 
-            CaptureCollider();
-        } 
-       
+        // if (laserOn && !catcher.action.triggered)
+        // {
+        //     lineRenderer.enabled = false; 
+        // }
+
+        // if (Input.GetKeyDown(KeyCode.F))
+        // {
+        //     CaptureLaser();
+        //     CaptureCollider();
+        // } 
+        //
 
 
     }
 
     void CaptureCollider()
     {
-        int objectsHit = playerCollider.Raycast(Vector2.right, hits,maxDistance);
+        int objectsHit;
+        if (PlayerMovement.isFacingRight == true)
+        {
+            objectsHit = playerCollider.Raycast( Vector2.right, hits, maxDistance);
+
+        }
+        else
+        {
+            objectsHit = playerCollider.Raycast( Vector2.left, hits, maxDistance);
+
+        }
 
         for (int i = 0; i < objectsHit; i++)
         {
@@ -50,6 +86,8 @@ public class Capture : MonoBehaviour
             {
                 if (hits[i].collider.GetComponent<BeeEnemy>())
                 {
+                    Debug.DrawRay(transform.position, Vector2.right * maxDistance, Color.red);
+
                     BeeEnemy beeAbility = hits[i].collider.GetComponent<BeeEnemy>();
                         
                     var inv = Inventory.Instance;
@@ -59,23 +97,32 @@ public class Capture : MonoBehaviour
                     bool added = inv.AddToInventory(beeAbility.initialAmount, beeAbility.bulletName);
                     if (added)
                     {
+                        scoreManager.AddScore(10);
                         Destroy(hits[i].transform.gameObject);
                     }
         
                 }
-
-                    
             }
         }
-             
     }
 
-    IEnumerator CaptureLaser()
+    void CaptureLaser()
     {
         lineRenderer.enabled = true; 
 
-        yield return new WaitForSeconds(0.5f);
+        
+    }
+    
+    private void OnCatch(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("OnCatch");
+        if (ctx.performed)
+        {
+            
+            // CaptureLaser();
+            laserOn = true;
+            CaptureCollider();
 
-        lineRenderer.enabled = false;
+        }
     }
 }
