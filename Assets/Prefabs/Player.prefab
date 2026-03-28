@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 288531627627137115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.507, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112,6 +112,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b6909b4c-d272-4942-a978-19dd5222b32e
     m_ActionName: 'MainGameplay/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1f5f38f0-f6da-45d5-b050-1bc94826757a
+    m_ActionName: 'MainGameplay/Interact[/Keyboard/f]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 027d102a-9b92-436a-a182-223c4656d8d4
+    m_ActionName: 'MainGameplay/Escape[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: MainGameplay
@@ -130,7 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 38c5aac2970330a4295ecb256de37f79, type: 2}
-  isFacingRight: 1
   move: {fileID: 1086278882966601072, guid: ddfb164c4d6af934bae25cecd95ae80a, type: 3}
   jump: {fileID: 4534045543086771326, guid: ddfb164c4d6af934bae25cecd95ae80a, type: 3}
   groundCheckPoint: {fileID: 1575267729129370379}
@@ -225,6 +232,8 @@ MonoBehaviour:
   playerCollider: {fileID: 7389775700930037654}
   startLaser: {fileID: 1130445544204555923}
   endLaser: {fileID: 5745646608246828172}
+  scoreManager: {fileID: 0}
+  catcher: {fileID: 4929916768220396875, guid: ddfb164c4d6af934bae25cecd95ae80a, type: 3}
 --- !u!50 &4242048511104430917
 Rigidbody2D:
   serializedVersion: 5
@@ -597,7 +606,7 @@ Transform:
   m_GameObject: {fileID: 2359389333954483397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.541, y: 0, z: 0}
+  m_LocalPosition: {x: 3.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
