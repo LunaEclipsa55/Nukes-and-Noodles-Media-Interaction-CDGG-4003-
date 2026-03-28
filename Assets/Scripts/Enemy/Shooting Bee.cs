@@ -3,7 +3,7 @@ using UnityEngine;
 public class ShootingBee : MonoBehaviour
 {
     [Header("Target")]
-    public Transform player;
+    private Transform player;
 
     [Header("Weaponry")]
     public GameObject enemyBullet;
