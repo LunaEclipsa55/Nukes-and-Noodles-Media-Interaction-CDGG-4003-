@@ -5,12 +5,15 @@ public class PlayerStats : MonoBehaviour
     //maybe health?
     public int health;
     public int healthMax = 100;
+    private GameObject diedUI;
 
-    bool isDead = false;
+    public static bool isDead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        diedUI = GameObject.Find("DiedUI");
+        diedUI.SetActive(false);
         health = healthMax;
     }
 
@@ -43,7 +46,8 @@ public class PlayerStats : MonoBehaviour
         
         Debug.Log("Ded.");
         isDead = true;
-        gameObject.SetActive(false);
-        Application.Quit();
+        Time.timeScale = 0f;
+        diedUI.SetActive(true);
+        //gameObject.SetActive(false);
     }
 }

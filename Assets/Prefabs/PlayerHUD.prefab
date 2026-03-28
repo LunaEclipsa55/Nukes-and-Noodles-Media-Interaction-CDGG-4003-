@@ -926,4 +926,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 4352069356490608843}
-  score: 0

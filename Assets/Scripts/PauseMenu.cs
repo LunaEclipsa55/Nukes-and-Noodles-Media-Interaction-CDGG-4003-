@@ -78,10 +78,20 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
+        PlayerStats.isDead = false;
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         Time.timeScale = 1f;
         string scene = SceneManager.GetActiveScene().name;
         
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);    }
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);    
+    }
+
+    public void RestartGameDied()
+    {
+        Time.timeScale = 1f;
+
+        string scene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(scene);
+    }
 }
 
