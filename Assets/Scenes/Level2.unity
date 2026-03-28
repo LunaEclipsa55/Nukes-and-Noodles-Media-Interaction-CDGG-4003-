@@ -72597,6 +72597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiedUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7935214949233475192, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -182683,6 +182687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHUD
       objectReference: {fileID: 0}
+    - target: {fileID: 8909106385341285266, guid: 17197ca52586a5a479783b9c7b1b9625, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -185853,6 +185861,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1708453749}
+    - target: {fileID: 690961025584567124, guid: 9cd635062917da1458eed8be535e6c41, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 253792857
+      objectReference: {fileID: 0}
     - target: {fileID: 1752622338104114493, guid: 9cd635062917da1458eed8be535e6c41, type: 3}
       propertyPath: m_Pivot.x
       value: 0
