@@ -264,4 +264,4 @@ MonoBehaviour:
   attackRange: 0
   damage: 0
   initialAmount: 1000
-  bulletName: Yellow Bullet
+  bulletName: Ammo Yellow
