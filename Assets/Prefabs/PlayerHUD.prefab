@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 1936930291972507173}
   - component: {fileID: 7889449777774406722}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 316638004096936506}
   - component: {fileID: 7138541944679789532}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 3162049229021350974}
   - component: {fileID: 4528793910063227711}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
