@@ -3,14 +3,16 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int Health = 100;
+    public int Health;
     public bool death = true;
+    public HealthBarBehavior Healthbar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Health = Mathf.Clamp(Health, 0, maxHealth);
         if (Health == 0) Health = maxHealth;
+        Healthbar.SetHealth(Health, maxHealth);
     }
 
     // Update is called once per frame
