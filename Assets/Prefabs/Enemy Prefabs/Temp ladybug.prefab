@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7255409989991369547}
   - component: {fileID: 2298178264492603870}
   - component: {fileID: 7668103425192380069}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,13 +119,13 @@ GameObject:
   - component: {fileID: 8248792708919870914}
   - component: {fileID: 3098856387058786398}
   - component: {fileID: 6383509030935817979}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Temp ladybug
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2154986311316738296
 Transform:
   m_ObjectHideFlags: 0
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 6286241446806380172}
   - component: {fileID: 4330869422186617203}
   - component: {fileID: 1779271085118574395}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 5347838953711704508}
   - component: {fileID: 2741044299731686411}
   - component: {fileID: 7485993059872064575}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 4864273895581056861}
   - component: {fileID: 3008478966427988688}
   - component: {fileID: 7286300747446293125}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ RectTransform:
   m_Father: {fileID: 8180001430969554629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0.0006713867, y: 0}
   m_SizeDelta: {x: 0.0032501, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -551,7 +551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3704512464420991676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundDetection (1)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -582,7 +582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8180001430969554629}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
