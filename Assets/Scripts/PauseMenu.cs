@@ -54,8 +54,10 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
         isPaused = false;
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(isPaused);
+        
     }
 
     public void PauseGame()
@@ -78,12 +80,13 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        PlayerStats.isDead = false;
-        Destroy(GameObject.FindGameObjectWithTag("Player"));
+        //PlayerStats.isDead = false;
+        //Destroy(GameObject.FindGameObjectWithTag("Player"));
         Time.timeScale = 1f;
         string scene = SceneManager.GetActiveScene().name;
         
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);    
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        PlayerMovement.isFacingRight = true; 
     }
 
     public void RestartGameDied()

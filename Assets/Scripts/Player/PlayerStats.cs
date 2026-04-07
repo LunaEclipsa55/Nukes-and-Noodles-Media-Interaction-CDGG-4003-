@@ -5,22 +5,22 @@ public class PlayerStats : MonoBehaviour
     //maybe health?
     public int health;
     public int healthMax = 100;
-    private GameObject diedUI;
+    public GameObject diedUI;
 
     public static bool isDead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        diedUI = GameObject.Find("DiedUI");
+        
         diedUI.SetActive(false);
         health = healthMax;
     }
 
     // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        diedUI.SetActive(false);
     }
 
     public void Heal(int amount)

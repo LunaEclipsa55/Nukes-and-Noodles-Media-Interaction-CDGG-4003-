@@ -83,6 +83,12 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        // if (Input.GetKeyDown(KeyCode.Space) && isJumping)
+        // {
+        //     Physics.gravity = new Vector3(0, -1.0f, 0);
+        //     
+        // } was trying to play with levitating 
+
         // Reset jump state when falling
         if (isJumping && rb.linearVelocity.y < 0)
             isJumping = false;
