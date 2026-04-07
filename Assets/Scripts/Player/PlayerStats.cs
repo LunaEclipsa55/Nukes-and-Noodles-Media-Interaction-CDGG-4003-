@@ -5,7 +5,7 @@ public class PlayerStats : MonoBehaviour
     //maybe health?
     public int health;
     public int healthMax = 100;
-    private GameObject diedUI;
+    [SerializeField]private GameObject diedUI;
 
     public static bool isDead = false;
 

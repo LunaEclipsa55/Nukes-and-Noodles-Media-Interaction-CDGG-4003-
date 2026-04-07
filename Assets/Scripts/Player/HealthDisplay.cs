@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class HealthDisplay : MonoBehaviour
 {
     public int health;
-    public int maxHealth;
+    public int healthMax;
 
     public Sprite emptyHeart;
     public Sprite fullHeart;
@@ -23,7 +23,7 @@ public class HealthDisplay : MonoBehaviour
     void Update()
     {
         health = playerHealth.health;
-        maxHealth = playerHealth.maxHealth;
+        healthMax = playerHealth.healthMax;
         for(int i = 0; i < hearts.Length; i++)
         {
             if(i < health)
@@ -34,7 +34,7 @@ public class HealthDisplay : MonoBehaviour
             {
                 hearts[i].sprite = emptyHeart;
             }
-            if(i < maxHealth) 
+            if(i < healthMax) 
             {
                 hearts[i].enabled = true;
             }

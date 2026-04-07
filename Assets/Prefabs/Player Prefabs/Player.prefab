@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthMax: 100
+  diedUI: {fileID: 7935214949233475192, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
 --- !u!114 &6145939736149510175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,14 +232,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb19b6d2a427e13dbe8c1eba2798f0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 3
+  health: 3
+  healthMax: 3
   emptyHeart: {fileID: -4348244256689316140, guid: df354bbb3a424544dbc36af75e9a2c48, type: 3}
   fullHeart: {fileID: 3796502417824735110, guid: df354bbb3a424544dbc36af75e9a2c48, type: 3}
   hearts:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  playerHealth: {fileID: 5291135404571679222}
 --- !u!114 &4155966279332013843
 MonoBehaviour:
   m_ObjectHideFlags: 0
