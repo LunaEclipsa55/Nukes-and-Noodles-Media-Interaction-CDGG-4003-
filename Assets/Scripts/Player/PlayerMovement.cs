@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public float LastPressedJumpTime { get; private set; }
 
     private bool isJumping;
+    private bool isGrounded;
     public static bool isFacingRight = true;
 
     [Header("Input")]
@@ -80,21 +81,28 @@ public class PlayerMovement : MonoBehaviour
         {
             LastOnGroundTime = Data.coyoteTime;
             isJumping = false;
+            isGrounded = true; 
 
         }
-
-        // if (Input.GetKeyDown(KeyCode.Space) && isJumping)
-        // {
-        //     Physics.gravity = new Vector3(0, -1.0f, 0);
-        //     
-        // } was trying to play with levitating 
+        
+        //Test Levitating
+        if (Input.GetKey(KeyCode.Space) && isJumping)
+        {
+            if (rb.linearVelocity.y < -2f) // only when falling
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, -10f);
+            }
+            
+        }
 
         // Reset jump state when falling
         if (isJumping && rb.linearVelocity.y < 0)
+        {
             isJumping = false;
+        }
 
         // Attempt jump
-        if (LastOnGroundTime > 0 && LastPressedJumpTime > 0 && !isJumping)
+        if (LastOnGroundTime > 0 && LastPressedJumpTime > 0 && !isJumping && isGrounded)
         {
             Jump();
         }
@@ -149,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
         
         isJumping = true;
+        isGrounded = false;
     }
 
     private bool CanJump()
