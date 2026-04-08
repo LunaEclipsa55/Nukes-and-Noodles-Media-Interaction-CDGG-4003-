@@ -23,7 +23,7 @@ public class HealthDisplay : MonoBehaviour
     void Update()
     {
         health = playerHealth.health;
-        maxHealth = playerHealth.maxHealth;
+        maxHealth = playerHealth.healthMax;
         for(int i = 0; i < hearts.Length; i++)
         {
             if(i < health)
