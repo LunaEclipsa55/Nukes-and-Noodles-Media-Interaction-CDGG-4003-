@@ -6,7 +6,7 @@ public class PunchingLadybug : MonoBehaviour
     public Transform player;
     
     [Header("Attack")]
-    public int damage = 33;
+    public int damage = 15;
     public float cooldown = 1.5f;
     public float attackRange = 1.5f;
 
