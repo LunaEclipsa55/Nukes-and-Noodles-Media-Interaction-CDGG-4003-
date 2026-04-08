@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  damage: 15
+  damage: 2
   cooldown: 1.5
   attackRange: 1.5
 --- !u!114 &8248792708919870914
@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93b8ea3dcaab34a899e8ced584627d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  Health: 100
+  maxHealth: 5
+  Health: 5
   death: 1
 --- !u!61 &6383509030935817979
 BoxCollider2D:

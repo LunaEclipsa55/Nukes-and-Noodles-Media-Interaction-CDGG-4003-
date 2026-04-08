@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d9a7fac68da7a4295bc7618c5f5147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  healthMax: 100
+  health: 3
+  healthMax: 3
   diedUI: {fileID: 7935214949233475192, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
   playerSp: {fileID: 3127996387476483735}
   move: {fileID: 2017004638850265587}

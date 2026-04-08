@@ -4,7 +4,7 @@ public class PlayerStats : MonoBehaviour
 {
     //maybe health?
     public int health;
-    public int healthMax = 100;
+    public int healthMax = 3;
     [SerializeField]private GameObject diedUI;
 
     [SerializeField] public SpriteRenderer playerSp;
