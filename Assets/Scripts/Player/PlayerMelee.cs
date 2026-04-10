@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMelee : MonoBehaviour
 {
     [SerializeField] public float attackRange = 0.8f;
-    [SerializeField] public int damage = 10;
+    [SerializeField] public int damage = 5;
     [SerializeField] public float attackCooldown = 0.35f;
     [SerializeField] public LayerMask enemyLayer;
 
@@ -44,6 +44,12 @@ public class PlayerMelee : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
+            }
+
+            var boss = hit.GetComponent<BossHealth>();
+            if (boss != null)
+            {
+                boss.TakeDamage(damage);
             }
         }
 

@@ -4,7 +4,6 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int Health;
-    public bool death = true;
     HealthBar healthBar;
 
     private void Awake()
@@ -15,8 +14,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Health = Mathf.Clamp(Health, 0, maxHealth);
-        if (Health == 0) Health = maxHealth;
+        Health = maxHealth;
         healthBar.UpdateHealthBar(Health, maxHealth);
     }
 
@@ -39,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        if(death) gameObject.SetActive(false);
+        gameObject.SetActive(false);
         Debug.Log($"{gameObject.name} dies.");
     }
 }
