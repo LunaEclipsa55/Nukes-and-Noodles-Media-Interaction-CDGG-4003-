@@ -6,9 +6,18 @@
             "id": "bbeee00a-1934-4975-9038-61cdb06b33e8",
             "actions": [
                 {
-                    "name": "Shooting",
+                    "name": "Catch",
                     "type": "Button",
                     "id": "6e89cf6a-f4b8-4f2a-b721-53a80e618a89",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "1f5f38f0-f6da-45d5-b050-1bc94826757a",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -31,17 +40,37 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "027d102a-9b92-436a-a182-223c4656d8d4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "3c45fb46-ea7f-4a20-b492-c58334feb992",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Catch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "28bed8e8-de85-4d08-916b-11c9f21fe645",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shooting",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -130,6 +159,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "22c7c231-407c-48e8-8391-b795176d6d24",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

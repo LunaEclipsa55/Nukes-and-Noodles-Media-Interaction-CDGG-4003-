@@ -24,6 +24,7 @@ public class PickUp : MonoBehaviour
 
 
         bool added = inv.AddToInventory(amount, itemName);
+        inv.UseItem(itemName, amount);
         if (added && destroyOnPickup)
         {
             Destroy(gameObject);

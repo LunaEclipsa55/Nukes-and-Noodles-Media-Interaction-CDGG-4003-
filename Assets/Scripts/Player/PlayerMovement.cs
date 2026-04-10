@@ -20,9 +20,9 @@ public class PlayerMovement : MonoBehaviour
     public float LastPressedJumpTime { get; private set; }
 
     private bool isJumping;
-    public bool isFacingRight = true;
+    public static bool isFacingRight = true;
 
-
+    [Header("Input")]
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference jump;
 
@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        
         rb = GetComponent<Rigidbody2D>();
     }
     private void OnEnable()

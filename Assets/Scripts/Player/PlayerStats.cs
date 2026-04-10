@@ -4,13 +4,17 @@ public class PlayerStats : MonoBehaviour
 {
     //maybe health?
     public int health;
-    public int healthMax = 100;
+    public int healthMax = 3;
+    [SerializeField]private GameObject diedUI;
 
-    bool isDead = false;
+    [SerializeField] public SpriteRenderer playerSp;
+    [SerializeField] public PlayerMovement move;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //diedUI = GameObject.Find("DiedUI");
+        //diedUI.SetActive(false);
         health = healthMax;
     }
 
@@ -33,17 +37,10 @@ public class PlayerStats : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
-            Die();
+            playerSp.enabled = false;
+            move.enabled = false;
+            //diedUI.SetActive(true);
+            Debug.Log("Ded.");
         }
-    }
-
-    void Die()
-    {
-        if(isDead) return;
-        
-        Debug.Log("Ded.");
-        isDead = true;
-        gameObject.SetActive(false);
-        Application.Quit();
     }
 }

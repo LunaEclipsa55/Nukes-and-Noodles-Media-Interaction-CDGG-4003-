@@ -1,0 +1,96 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
+public class PauseMenu : MonoBehaviour
+{
+    [Header("Input")]
+    public InputActionReference pauseAction;
+    
+    [Header("UI")]
+    [SerializeField] GameObject pauseMenu;
+
+    private bool isPaused = false;
+
+    void Awake()
+    {
+        pauseMenu = GameObject.Find("PauseMenu");
+
+    }
+        
+    void Start()
+    {
+        isPaused = false;
+        pauseMenu.SetActive(isPaused);
+    }
+    
+    
+    private void OnEnable()
+    {
+        // Subscribe to the action
+        pauseAction.action.performed += OnPausePerformed;
+        pauseAction.action.Enable();
+    }
+    
+    private void OnDisable()
+    {
+        // Unsubscribe to avoid memory leaks
+        pauseAction.action.performed -= OnPausePerformed;
+        pauseAction.action.Disable();
+    }
+
+    private void OnPausePerformed(InputAction.CallbackContext context)
+    {
+        TogglePause();
+    }
+
+    private void TogglePause()
+    {
+        isPaused = !isPaused;
+        pauseMenu.SetActive(isPaused);
+
+        Time.timeScale = isPaused ? 0f : 1f; // Freeze/unfreeze game time
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+    public void QuitGame()
+    {
+        if (Application.isPlaying)
+            Application.Quit();
+        else Debug.Log("Quitting Game");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu"); 
+    }
+
+    public void RestartGame()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
+        Time.timeScale = 1f;
+        string scene = SceneManager.GetActiveScene().name;
+        
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);    
+    }
+
+    public void RestartGameDied()
+    {
+        Time.timeScale = 1f;
+
+        string scene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(scene);
+    }
+}
+

@@ -15,8 +15,8 @@ TagManager:
   - UI
   - Ground
   - Projectile
-  - 
-  - 
+  - BackgroundAsset
+  - Enemy
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackgroundIMAGE
+    uniqueID: 253792857
+    locked: 0
   - name: Background
     uniqueID: 183233405
     locked: 0

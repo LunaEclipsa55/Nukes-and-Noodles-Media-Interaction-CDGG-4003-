@@ -141,7 +141,7 @@ public class Inventory : MonoBehaviour
         return (node != null) ? node.Value.amount : 0;
     }
 
-    void SetQuickItem(int slot, string name)
+    public void SetQuickItem(int slot, string name)
     {
         if (slot < 0 || slot >= 4) return;
         if (string.IsNullOrEmpty(name)) return;
@@ -157,7 +157,7 @@ public class Inventory : MonoBehaviour
         UseItem(n, 1);
     }
 
-    void UseItem(string name, int num)
+    public void UseItem(string name, int num)
     {
         if (num <= 0) return;
 
