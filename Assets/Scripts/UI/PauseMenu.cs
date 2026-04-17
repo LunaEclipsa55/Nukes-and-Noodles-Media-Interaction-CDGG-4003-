@@ -84,6 +84,7 @@ public class PauseMenu : MonoBehaviour
         //PlayerStats.isDead = false;
         //Destroy(GameObject.FindGameObjectWithTag("Player"));
         Time.timeScale = 1f;
+        PlayerStats.isDead = false;
         string scene = SceneManager.GetActiveScene().name;
         
         SceneManager.LoadScene(scene, LoadSceneMode.Single);

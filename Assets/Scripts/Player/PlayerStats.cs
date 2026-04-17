@@ -13,6 +13,10 @@ public class PlayerStats : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+<<<<<<< Updated upstream
+=======
+        diedUI.SetActive(false);
+>>>>>>> Stashed changes
         health = healthMax;
     }
 
@@ -24,10 +28,14 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
+<<<<<<< Updated upstream
         if (health <= 0)
         {
             Die();
         }
+=======
+        Debug.Log("Player is dead?"  + isDead);
+>>>>>>> Stashed changes
     }
 
     public void Heal(int amount)
