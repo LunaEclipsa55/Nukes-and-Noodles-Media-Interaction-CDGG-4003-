@@ -12,8 +12,6 @@ public class PlayerStats : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        diedUI.SetActive(false);
         health = healthMax;
     }
 
@@ -46,8 +44,9 @@ public class PlayerStats : MonoBehaviour
         
         Debug.Log("Ded.");
         isDead = true;
-        Time.timeScale = 0f;
         diedUI.SetActive(true);
+        Time.timeScale = 0f;
+        
         //gameObject.SetActive(false);
     }
 }
