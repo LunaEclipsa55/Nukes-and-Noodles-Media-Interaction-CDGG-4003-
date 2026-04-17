@@ -34,6 +34,13 @@ public class PlayerMovement : MonoBehaviour
     //Animator 
     [SerializeField] private Animator _animator;
 
+    //Audio
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip walkSound;
+    [SerializeField] private AudioClip jumpSound;
+    private float lastMoveInput = 0f;
+
     private void FixedUpdate()
     {
         Run();
@@ -41,24 +48,39 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        
         rb = GetComponent<Rigidbody2D>();
+
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody2D>();
+
+        
     }
     private void OnEnable()
     {
+        move.action.Enable(); 
         jump.action.Enable();
         jump.action.performed += OnJump;
     }
 
     private void OnDisable()
     {
+        move.action.Disable(); 
         jump.action.performed -= OnJump;
         jump.action.Disable();
     }
-    
+
+  
     void Update()
     {
-        
+        //walking sound
+        if (moveDirection.x != 0 && lastMoveInput == 0)
+        {
+            audioSource.PlayOneShot(walkSound);
+        }
+
+        lastMoveInput = moveDirection.x;
+
         // Read movement input
         moveDirection = move.action.ReadValue<Vector2>();
 
@@ -75,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
         LastOnGroundTime -= Time.deltaTime;
         LastPressedJumpTime -= Time.deltaTime;
 
+        
         // Ground check
         if (Physics2D.OverlapBox(groundCheckPoint.position, groundCheckSize, 0, groundLayer))
         {
@@ -82,6 +105,8 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
 
         }
+      
+        
 
         // if (Input.GetKeyDown(KeyCode.Space) && isJumping)
         // {
@@ -97,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
         if (LastOnGroundTime > 0 && LastPressedJumpTime > 0 && !isJumping)
         {
             Jump();
+            audioSource.PlayOneShot(jumpSound);
         }
             
         if (moveDirection.x < 0 && isFacingRight)
@@ -147,8 +173,9 @@ public class PlayerMovement : MonoBehaviour
         } 
         
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
-        
+
         isJumping = true;
+        audioSource.PlayOneShot(jumpSound);
     }
 
     private bool CanJump()
