@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1696461791872678993}
   - component: {fileID: 1293889933909374902}
   - component: {fileID: 7963485145886291833}
+  - component: {fileID: 6974272349334863469}
   - component: {fileID: 681475268146045498}
   m_Layer: 9
   m_Name: Big Boss 2
@@ -104,6 +105,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   Health: 50
+--- !u!114 &6974272349334863469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309868026778012862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7efeae856a5017c8ba3402b15840ac64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  warningPrefab: {fileID: 0}
+  hazardPrefab: {fileID: 0}
+  warningTime: 1
+  hazardLife: 3
+  delayBetweenAttacks: 0.5
 --- !u!61 &681475268146045498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -232,11 +254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2552408959886624309, guid: 2a99ff63cfae62d48963d785c370fccd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.032094955
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 2552408959886624309, guid: 2a99ff63cfae62d48963d785c370fccd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.7448435
+      value: 0.715
       objectReference: {fileID: 0}
     - target: {fileID: 2552408959886624309, guid: 2a99ff63cfae62d48963d785c370fccd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
