@@ -7,6 +7,7 @@
 
 // FOR THIS SCRIPT TO WORK THE GROUND THAT THE PLAYER IS ON NEED TO BE ON THE GROUND LAYER
 using System;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,11 +22,16 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isJumping;
     private bool isGrounded;
+
+    private bool isLevitating; 
+    private bool canLeviateJump;
     public static bool isFacingRight = true;
 
     [Header("Input")]
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference jump;
+    [SerializeField] private InputActionReference levitate;
+
 
     
     [SerializeField] private Transform groundCheckPoint;
@@ -38,6 +44,22 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Run();
+        
+        //Test Levitating
+        if (isLevitating && !isGrounded)
+        {
+            if (rb.linearVelocity.y < -2f) // only when falling
+            {
+                rb.AddForce(Vector2.up * 50f);
+            }
+            
+        }
+
+        if (canLeviateJump)
+        {
+            LevitateJump();
+            canLeviateJump = false;
+        }
     }
 
     private void Awake()
@@ -49,12 +71,23 @@ public class PlayerMovement : MonoBehaviour
     {
         jump.action.Enable();
         jump.action.performed += OnJump;
+        
+        levitate.action.Enable();
+
+        levitate.action.started += OnLevitationStart;
+        levitate.action.canceled += OnLevitationCanceled;
+
     }
 
     private void OnDisable()
     {
         jump.action.performed -= OnJump;
         jump.action.Disable();
+
+        levitate.action.started -= OnLevitationStart;
+        levitate.action.canceled -= OnLevitationCanceled;
+
+        levitate.action.Disable();
     }
     
     void Update()
@@ -72,6 +105,15 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("isRunning", false);
         }
 
+        //Read levitation input
+        if (levitate.action.ReadValue<float>() > 0.0)
+        {
+            isLevitating = true;
+        } else
+        {
+            isLevitating = false;   
+        }
+
         // Tick timers
         LastOnGroundTime -= Time.deltaTime;
         LastPressedJumpTime -= Time.deltaTime;
@@ -85,15 +127,6 @@ public class PlayerMovement : MonoBehaviour
 
         }
         
-        //Test Levitating
-        if (Input.GetKey(KeyCode.Space) && isJumping)
-        {
-            if (rb.linearVelocity.y < -2f) // only when falling
-            {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, -10f);
-            }
-            
-        }
 
         // Reset jump state when falling
         if (isJumping && rb.linearVelocity.y < 0)
@@ -116,6 +149,16 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
 
+        
+    }
+
+    private void OnLevitationStart(InputAction.CallbackContext ctx)
+    {
+        
+    } 
+
+    private void OnLevitationCanceled(InputAction.CallbackContext ctx)
+    {
         
     }
 
@@ -159,6 +202,19 @@ public class PlayerMovement : MonoBehaviour
         isJumping = true;
         isGrounded = false;
     }
+    
+    private void LevitateJump()
+    {
+        float force = Data.jumpForce * 0.8f; // slightly weaker than normal jump
+
+        // Reset downward velocity so jump feels responsive
+        if (rb.linearVelocity.y < 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+        }
+
+        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+    }
 
     private bool CanJump()
     {
@@ -171,6 +227,12 @@ public class PlayerMovement : MonoBehaviour
         if (ctx.performed)
         {
             LastPressedJumpTime = Data.jumpInputBufferTime;
+            
+            //Ability to boost while levitating
+            if (isLevitating && !isGrounded)
+            {
+                canLeviateJump = true; 
+            }
 
         }
     }
