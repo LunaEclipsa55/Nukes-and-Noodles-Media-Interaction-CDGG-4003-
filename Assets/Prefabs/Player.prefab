@@ -120,6 +120,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 027d102a-9b92-436a-a182-223c4656d8d4
     m_ActionName: 'MainGameplay/Escape[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5ec782df-668a-412c-9455-10d8a4351d08
+    m_ActionName: 'MainGameplay/Levitate[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: MainGameplay
@@ -140,6 +144,7 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: 38c5aac2970330a4295ecb256de37f79, type: 2}
   move: {fileID: 1086278882966601072, guid: ddfb164c4d6af934bae25cecd95ae80a, type: 3}
   jump: {fileID: 4534045543086771326, guid: ddfb164c4d6af934bae25cecd95ae80a, type: 3}
+  levitate: {fileID: -488008672282542572, guid: ddfb164c4d6af934bae25cecd95ae80a, type: 3}
   groundCheckPoint: {fileID: 1575267729129370379}
   groundCheckSize: {x: 0.49, y: 0.03}
   groundLayer:
@@ -216,6 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthMax: 100
+  diedUI: {fileID: 0}
 --- !u!114 &4155966279332013843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,10 +252,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.7
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.9
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
