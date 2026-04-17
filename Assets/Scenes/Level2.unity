@@ -4372,6 +4372,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 206.93564
@@ -4427,6 +4439,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9059,6 +9075,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 119.40015
@@ -9114,6 +9142,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11325,6 +11357,11 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!1 &375992813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7935214949233475192, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+  m_PrefabInstance: {fileID: 1167864520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &377191978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28692,115 +28729,6 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
---- !u!1001 &537508710
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5893738542566387836, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 922442731}
-    - target: {fileID: 5893738542566387836, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7935214949233475192, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_Name
-      value: DiedUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 7935214949233475192, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
 --- !u!114 &546647401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31388,6 +31316,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.77728
@@ -31443,6 +31383,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39214,6 +39158,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.885235
@@ -39269,6 +39225,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45188,6 +45148,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 157.02007
@@ -45243,6 +45215,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47115,6 +47091,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0.9
       objectReference: {fileID: 0}
+    - target: {fileID: 5291135404571679222, guid: 32f3019c247ecef4290a6c28c5a51eba, type: 3}
+      propertyPath: diedUI
+      value: 
+      objectReference: {fileID: 375992813}
     - target: {fileID: 6145939736149510175, guid: 32f3019c247ecef4290a6c28c5a51eba, type: 3}
       propertyPath: 'hearts.Array.data[0]'
       value: 
@@ -48689,6 +48669,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 194.14603
@@ -48744,6 +48736,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49547,6 +49543,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 174.15152
@@ -49602,6 +49610,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -51390,6 +51402,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.182587
@@ -51445,6 +51469,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -52881,6 +52909,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 107.75497
@@ -52936,6 +52976,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -53854,6 +53898,107 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
+--- !u!1001 &1167864520
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5893738542566387836, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 922442731}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909550552935001373, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935214949233475192, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+      propertyPath: m_Name
+      value: DiedUI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
 --- !u!114 &1172881234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55427,6 +55572,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 56.937172
@@ -55482,6 +55639,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -55584,6 +55745,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 185.39084
@@ -55639,6 +55812,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -79810,6 +79987,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 222.18538
@@ -79865,6 +80054,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -82748,6 +82941,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 217.8716
@@ -82803,6 +83008,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85503,6 +85712,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40.761868
@@ -85558,6 +85779,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -88479,6 +88704,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7093694882378016766, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_TargetGraphic
       value: 
@@ -88526,6 +88763,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89254,6 +89495,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 132.68208
@@ -89309,6 +89562,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90493,6 +90750,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 117.348236
@@ -90549,6 +90818,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeeEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90579,6 +90852,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3617763831179020264, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -90637,6 +90922,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -97410,6 +97699,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859506489276398031, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772016869952242518, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 72.82939
@@ -97465,6 +97766,10 @@ PrefabInstance:
     - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
       propertyPath: m_Name
       value: BeeEnemy (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203311603965953714, guid: cf7c5516ed5cd134cb98cb60fcd77d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -104894,9 +105199,9 @@ SceneRoots:
   - {fileID: 1017915405}
   - {fileID: 290773999}
   - {fileID: 1532872034}
-  - {fileID: 537508710}
   - {fileID: 1003433572}
   - {fileID: 1441749011}
   - {fileID: 2394530645855557876}
   - {fileID: 1738694741}
   - {fileID: 292409984}
+  - {fileID: 1167864520}

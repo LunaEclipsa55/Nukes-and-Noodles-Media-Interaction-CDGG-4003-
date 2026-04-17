@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
     //maybe health?
     public int health;
-    public int healthMax = 100;
+    public int healthMax;
     public GameObject diedUI;
 
     public static bool isDead = false;
@@ -21,6 +22,14 @@ public class PlayerStats : MonoBehaviour
         diedUI.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
     public void Heal(int amount)
     {
         if (amount <= 0) return;
@@ -32,10 +41,7 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Player takes " + amount + " damage.");
         if (amount <= 0) return;
         health -= amount;
-        if (health <= 0)
-        {
-            Die();
-        }
+        
     }
 
     void Die()
