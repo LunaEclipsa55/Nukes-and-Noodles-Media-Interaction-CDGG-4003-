@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public int damage = 10;
+    public int damage = 1;
     public float life = 3f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
