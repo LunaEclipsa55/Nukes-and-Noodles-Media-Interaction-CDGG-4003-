@@ -37,6 +37,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        ScoreManager.Instance.AddScore(10);
         gameObject.SetActive(false);
         Debug.Log($"{gameObject.name} dies.");
     }

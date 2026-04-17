@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   healthMax: 3
-  diedUI: {fileID: 7935214949233475192, guid: b47cc464078e14c48851478a8d9f18b6, type: 3}
+  diedUI: {fileID: 0}
 --- !u!114 &6145939736149510175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +262,6 @@ MonoBehaviour:
   playerCollider: {fileID: 7389775700930037654}
   startLaser: {fileID: 1130445544204555923}
   endLaser: {fileID: 5745646608246828172}
-  scoreManager: {fileID: 0}
   catcher: {fileID: 4929916768220396875, guid: ddfb164c4d6af934bae25cecd95ae80a, type: 3}
 --- !u!114 &1353919864471800746
 MonoBehaviour:

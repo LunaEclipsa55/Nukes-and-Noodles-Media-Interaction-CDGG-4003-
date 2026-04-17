@@ -16,7 +16,7 @@ public class Capture : MonoBehaviour
     public Transform startLaser;
     public Transform endLaser;
 
-    public ScoreManager scoreManager;
+    //public ScoreManager scoreManager;
     
     [Header("Input")]
     [SerializeField] private InputActionReference catcher;
@@ -100,7 +100,7 @@ public class Capture : MonoBehaviour
                     // inv.SetQuickItem()
                     if (added)
                     {
-                        scoreManager.AddScore(10);
+                        ScoreManager.Instance.AddScore(5);
                         Destroy(hits[i].transform.gameObject);
                     }
         

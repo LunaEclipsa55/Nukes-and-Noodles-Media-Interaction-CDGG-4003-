@@ -16,32 +16,47 @@ public class HealthDisplay : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerHealth.onHealthChanged += UpdateHearts;
+        UpdateHearts();
     }
 
-    // Update is called once per frame
-    void Update()
+    void UpdateHearts()
     {
-        health = playerHealth.health;
-        maxHealth = playerHealth.healthMax;
-        for(int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < hearts.Length; i++)
         {
-            if(i < health)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
-            if(i < maxHealth) 
-            {
-                hearts[i].enabled = true;
-            }
-            else
-            {
-                hearts[i].enabled = false;
-            }
+            if (hearts[i] == null) continue;
+
+            hearts[i].sprite = (i < playerHealth.health) ? fullHeart : emptyHeart;
+            hearts[i].enabled = (i < playerHealth.healthMax);
         }
     }
+
+
+
+    /* void Update()
+     {
+         health = playerHealth.health;
+         maxHealth = playerHealth.healthMax;
+         for(int i = 0; i < hearts.Length; i++)
+         {
+             if (hearts[i] == null) continue;
+
+             if(i < health)
+             {
+                 hearts[i].sprite = fullHeart;
+             }
+             else
+             {
+                 hearts[i].sprite = emptyHeart;
+             }
+             if(i < maxHealth)
+             {
+                 hearts[i].enabled = true;
+             }
+             else
+             {
+                 hearts[i].enabled = false;
+             }
+         }
+     } */
 }
