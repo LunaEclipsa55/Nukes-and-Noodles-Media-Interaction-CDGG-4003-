@@ -20,7 +20,7 @@
                     "id": "1f5f38f0-f6da-45d5-b050-1bc94826757a",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": false
                 },
                 {
@@ -45,6 +45,15 @@
                     "name": "Escape",
                     "type": "Button",
                     "id": "027d102a-9b92-436a-a182-223c4656d8d4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Levitate",
+                    "type": "Button",
+                    "id": "5ec782df-668a-412c-9455-10d8a4351d08",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -170,6 +179,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f932c7fa-66bc-480a-a129-666a33e3f243",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Levitate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
