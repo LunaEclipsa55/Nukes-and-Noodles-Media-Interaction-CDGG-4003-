@@ -120,12 +120,12 @@ GameObject:
   - component: {fileID: 3098856387058786398}
   - component: {fileID: 6383509030935817979}
   m_Layer: 9
-  m_Name: Temp ladybug
+  m_Name: LadybugEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2154986311316738296
 Transform:
   m_ObjectHideFlags: 0
