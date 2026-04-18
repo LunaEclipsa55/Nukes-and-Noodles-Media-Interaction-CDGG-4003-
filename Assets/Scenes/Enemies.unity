@@ -324,6 +324,11 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &1086677267 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4083369443608229675, guid: 32f3019c247ecef4290a6c28c5a51eba, type: 3}
+  m_PrefabInstance: {fileID: 1679927666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1237581203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -943,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc37fe5a04e9dd29a17985e069ffcf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1086677267}
   damage: 2
   cooldown: 1.5
   attackRange: 1.5
