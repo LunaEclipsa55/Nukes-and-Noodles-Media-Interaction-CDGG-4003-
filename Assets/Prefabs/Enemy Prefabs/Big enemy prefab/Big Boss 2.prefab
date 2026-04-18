@@ -118,9 +118,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8316279185265963758, guid: c30e6629de3c63189a0d8862d0aa2b16, type: 3}
+  - {fileID: 8286232334610450697, guid: 9d3d1b84e8f3ee18ab2861d31fe8dd9f, type: 3}
+  - {fileID: 8160329055061596471, guid: a3d4c18f5f02e4db59d6e46df8d18d90, type: 3}
   warningPrefab: {fileID: 326415067375118526, guid: 85962ceec537d966f92ca9a4b450d1aa, type: 3}
   hazardPrefab: {fileID: 7520507406345656278, guid: ce682ef8968399841929c11f68868744, type: 3}
   warningTime: 1
