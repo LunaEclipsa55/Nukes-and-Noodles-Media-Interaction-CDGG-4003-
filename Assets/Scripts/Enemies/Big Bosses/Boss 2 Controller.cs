@@ -22,6 +22,7 @@ public class StationaryBoss : MonoBehaviour
 
     // Delay between one attack and the next
     public float delayBetweenAttacks = 0.5f;
+    // t make the delay faster put *= 0.95f;
 
     void Start()
     {
@@ -36,6 +37,13 @@ public class StationaryBoss : MonoBehaviour
         {
             // Pattern 1: left to right
             yield return StartCoroutine(PatternLeftToRight());
+
+            //ro make the pattern random
+            //int pattern = Random.Range(0, 2);
+            //if(pattern = 0)
+            //  yield return StartCoroutine(PatternLeftToRight());
+            //else
+            //  yield return StartCoroutine(PatternOutsideToInside());
 
             // Small pause before next pattern
             yield return new WaitForSeconds(1f);
@@ -56,6 +64,9 @@ public class StationaryBoss : MonoBehaviour
             yield return StartCoroutine(DoAttack(attackPoints[i].position));
             yield return new WaitForSeconds(delayBetweenAttacks);
         }
+        //to do multiple attacks at once
+        //StartCoroutine(DoAttack(attackPoints[0].position));
+        //StartCoroutine(DoAttack(attackPoints[4].position));
     }
 
     IEnumerator PatternOutsideToInside()
