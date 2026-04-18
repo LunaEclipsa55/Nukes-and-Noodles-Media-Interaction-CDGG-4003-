@@ -97,13 +97,26 @@ public class Capture : MonoBehaviour
 
                     bool added = inv.AddToInventory(beeAbility.initialAmount, beeAbility.bulletName);
                     inv.UseItem(beeAbility.bulletName, beeAbility.initialAmount);
-                    // inv.SetQuickItem()
+                    inv.SetQuickItem(1, beeAbility.bulletName);
                     if (added)
                     {
                         ScoreManager.Instance.AddScore(5);
                         Destroy(hits[i].transform.gameObject);
                     }
         
+                }
+
+                if (hits[i].collider.GetComponent<PunchingLadybug>())
+                {
+                    var inv = Inventory.Instance;
+                    if (!inv) return;
+                    
+                    PlayerMovement.levitateAbility = true;
+                    
+                    inv.SetQuickItem(2, hits[i].collider.name);
+                    
+                    Destroy(hits[i].transform.gameObject);
+                    
                 }
             }
         }

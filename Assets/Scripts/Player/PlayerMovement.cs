@@ -19,12 +19,18 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDirection;
     public float LastOnGroundTime { get; private set; }
     public float LastPressedJumpTime { get; private set; }
+    
+    public static PlayerMovement Instance { get; private set; }
+
 
     private bool isJumping;
     private bool isGrounded;
 
     private bool isLevitating; 
     private bool canLeviateJump;
+    
+    public static bool levitateAbility { get; set; }
+    
     public static bool isFacingRight = true;
 
     [Header("Input")]
@@ -64,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        
+        levitateAbility = false;
         rb = GetComponent<Rigidbody2D>();
     }
     private void OnEnable()
@@ -106,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Read levitation input
-        if (levitate.action.ReadValue<float>() > 0.0)
+        if (levitate.action.ReadValue<float>() > 0.0 && levitateAbility)
         {
             isLevitating = true;
         } else
@@ -201,6 +207,11 @@ public class PlayerMovement : MonoBehaviour
         
         isJumping = true;
         isGrounded = false;
+    }
+
+    private void TurnOnLevitate()
+    {
+        levitateAbility = true; 
     }
     
     private void LevitateJump()

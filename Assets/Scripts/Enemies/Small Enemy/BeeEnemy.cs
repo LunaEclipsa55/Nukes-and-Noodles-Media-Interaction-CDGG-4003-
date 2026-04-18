@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BeeEnemy : Enemy
+public class BeeEnemy : MonoBehaviour
 {
     public int initialAmount = 1000; 
 
