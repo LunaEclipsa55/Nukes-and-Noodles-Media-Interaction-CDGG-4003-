@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShootingBee : MonoBehaviour
+public class WhispyWasp : MonoBehaviour
 {
     [Header("Target")]
     private Transform player;
@@ -9,7 +9,7 @@ public class ShootingBee : MonoBehaviour
     public GameObject enemyBullet;
     public Transform firepoint;
 
-    public float bulletSpeed = 5f;
+    public float bulletSpeed = 7f;
     public float shootcool = 2f;
 
     float shootTimer;
@@ -50,3 +50,4 @@ public class ShootingBee : MonoBehaviour
         if (rb) rb.linearVelocity = firepoint.right * bulletSpeed;
     }
 }
+
