@@ -93884,7 +93884,7 @@ GameObject:
   - component: {fileID: 8949407614994663010}
   - component: {fileID: 688201997753483286}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Level1Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
