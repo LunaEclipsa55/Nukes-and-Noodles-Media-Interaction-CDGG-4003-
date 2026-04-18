@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ChargingBeetle : MonoBehaviour
 {
@@ -52,7 +53,6 @@ public class ChargingBeetle : MonoBehaviour
         if(attackTimer <= 0f)
         {
             StartCoroutine(Charge());
-            attackTimer = cooldown;
         }
     }
 
@@ -109,7 +109,7 @@ public class ChargingBeetle : MonoBehaviour
 
         if(col.collider.CompareTag("Player"))
         {
-            PlayerStats player = collision.col.GetComponentInParent<PlayerStats>();
+            PlayerStats player = col.collider.GetComponentInParent<PlayerStats>();
             if(player != null)
             {
                 player.TakeDamage(damage);
