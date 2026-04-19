@@ -477,20 +477,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 244278492}
     - target: {fileID: 2219481403641266657, guid: 9c4292151d210f51da05a984186a1a05, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.91922545
-      objectReference: {fileID: 0}
-    - target: {fileID: 2219481403641266657, guid: 9c4292151d210f51da05a984186a1a05, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0295717
-      objectReference: {fileID: 0}
-    - target: {fileID: 2219481403641266657, guid: 9c4292151d210f51da05a984186a1a05, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.7758
+      value: 6.8354
       objectReference: {fileID: 0}
     - target: {fileID: 2219481403641266657, guid: 9c4292151d210f51da05a984186a1a05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.857
+      value: -0.8451
       objectReference: {fileID: 0}
     - target: {fileID: 2219481403641266657, guid: 9c4292151d210f51da05a984186a1a05, type: 3}
       propertyPath: m_LocalPosition.z
@@ -532,9 +524,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Temp Beetle
       objectReference: {fileID: 0}
-    - target: {fileID: 3456321627350228160, guid: 9c4292151d210f51da05a984186a1a05, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 5480320744869418473, guid: 9c4292151d210f51da05a984186a1a05, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5480320744869418473, guid: 9c4292151d210f51da05a984186a1a05, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

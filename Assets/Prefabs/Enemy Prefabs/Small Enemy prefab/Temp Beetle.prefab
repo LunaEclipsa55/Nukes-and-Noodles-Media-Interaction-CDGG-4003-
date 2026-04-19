@@ -68,7 +68,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.74, y: -1, z: 0}
-  m_LocalScale: {x: 0.8476811, y: 0.7434804, z: 1}
+  m_LocalScale: {x: 1.0384489, y: 1.0534577, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5480320744869418473}
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 318024318472760976}
   target: {fileID: 2219481403641266657}
-  offset: {x: 0, y: 0.5, z: 0}
+  offset: {x: 0, y: 1, z: 0}
 --- !u!1 &6778165836578661610
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.09, y: 1.37}
+  m_AnchoredPosition: {x: -0.01, y: 1.09}
   m_SizeDelta: {x: 88.4723, y: 47.7412}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3198669635278460548
