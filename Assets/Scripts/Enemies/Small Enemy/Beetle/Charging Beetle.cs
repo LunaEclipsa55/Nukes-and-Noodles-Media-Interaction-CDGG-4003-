@@ -113,6 +113,7 @@ public class ChargingBeetle : MonoBehaviour
             if(player != null)
             {
                 player.TakeDamage(damage);
+                player.Knockback(transform.position);
                 Debug.Log($"{gameObject.name} hit player for {damage} damage");
             }
         }
