@@ -214,6 +214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 5438660190353520986, guid: 7a217499e2b71ccd38497b86067254ae, type: 3}
   firepoint: {fileID: 1185240458020764954}
+  patrol: {fileID: 6917008150302307262}
+  detectRange: 5
   bulletSpeed: 7
   shootcool: 2
 --- !u!1 &5852719390480568591

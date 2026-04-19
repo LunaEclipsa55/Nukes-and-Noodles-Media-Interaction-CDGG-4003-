@@ -9,6 +9,9 @@ public class ShootingBee : MonoBehaviour
     public GameObject enemyBullet;
     public Transform firepoint;
 
+    public Patrol patrol;
+
+    public float detectRange = 5f;
     public float bulletSpeed = 5f;
     public float shootcool = 2f;
 
@@ -17,6 +20,10 @@ public class ShootingBee : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (patrol == null)
+        {
+            patrol = GetComponent<Patrol>();
+        }
         if (player == null){
             GameObject p = GameObject.FindGameObjectWithTag("Player");
             if (p) player = p.transform;
@@ -28,8 +35,22 @@ public class ShootingBee : MonoBehaviour
     {
         if(!player) return;
 
-        //float d = Vector3.Distance(transform.position, player.position);
+        float d = Vector3.Distance(transform.position, player.position);
         shootTimer -= Time.deltaTime;
+
+        // If player is too far, keep patrolling
+        if (d > detectRange)
+        {
+            if (patrol != null)
+                patrol.enabled = true;
+
+            return;
+        }
+
+        // Player detected:
+        // stop patrol so the wasp can face the player
+        if (patrol != null)
+            patrol.enabled = false;
 
         if(shootTimer <= 0f)
         {
@@ -44,9 +65,11 @@ public class ShootingBee : MonoBehaviour
 
         GameObject bullet = Instantiate(enemyBullet, firepoint.position, firepoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        
         rb.gravityScale = 0; // No gravity for bullets
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous; // Use Continuous for fast-moving objects
         rb.interpolation = RigidbodyInterpolation2D.Interpolate; // Smooth out movement
-        if (rb) rb.linearVelocity = firepoint.right * bulletSpeed;
+        Vector2 d = (player.position - firepoint.position).normalized;
+        rb.linearVelocity = d * bulletSpeed;
     }
 }

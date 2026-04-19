@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  damage: 0
+  damage: 2
   detectRange: 5
   chargeSpeed: 8
   chargeTime: 0.5
