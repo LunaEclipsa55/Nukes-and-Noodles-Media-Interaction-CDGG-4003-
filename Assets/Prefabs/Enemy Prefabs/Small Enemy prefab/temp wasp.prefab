@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3168471451508032871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3432556756068242649}
+  m_Layer: 9
+  m_Name: detectionground
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3432556756068242649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168471451508032871}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.71, y: -0.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3522019206337556248}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5752227331789756079
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,6 +67,7 @@ Transform:
   m_Children:
   - {fileID: 2161831216752601008}
   - {fileID: 1185240458020764954}
+  - {fileID: 3432556756068242649}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3081523928817697846
@@ -114,14 +146,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5752227331789756079}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c83e20626aeb3b14897ca9fb8906e5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
   distance: 5
-  groundDetection: {fileID: 0}
+  groundDetection: {fileID: 3432556756068242649}
 --- !u!61 &3890988154619077190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -227,6 +259,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 3522019206337556248}
+    - target: {fileID: 3620205925789058821, guid: 505b87a6fce3e5d4ea045a929ed57e2a, type: 3}
+      propertyPath: offset.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4527734301961719838, guid: 505b87a6fce3e5d4ea045a929ed57e2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

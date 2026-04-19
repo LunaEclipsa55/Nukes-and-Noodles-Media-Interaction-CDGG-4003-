@@ -24,6 +24,7 @@ public class ChargingBeetle : MonoBehaviour
     private bool isCharging = false;
     private bool isCooling = false;
     private Vector2 direction;
+    public Patrol patrol;
 
     float attackTimer;
 
@@ -31,8 +32,13 @@ public class ChargingBeetle : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        if (player == null){
+        
+        if (patrol == null)
+        {
+            patrol = GetComponent<Patrol>();
+        }
+        if (player == null)
+        {
             GameObject p = GameObject.FindGameObjectWithTag("Player");
             if (p) player = p.transform;
         }
@@ -65,7 +71,10 @@ public class ChargingBeetle : MonoBehaviour
         direction = (player.position - transform.position).normalized;
 
         //Face the player before charging
-        FaceDirection(direction);
+        if(patrol != null)
+        {
+            patrol.enabled = false;
+        }
 
         Debug.Log($"{gameObject.name} is winding up");
 
@@ -86,21 +95,16 @@ public class ChargingBeetle : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         isCharging = false;
 
+        if(patrol !=null)
+        {
+            patrol.enabled = true;
+        }
+
         Debug.Log($"{gameObject.name} finished charging.");
 
         //Cooldown before next charge
         yield return new WaitForSeconds(chargeCooldown);//temporary no extra wait here
         isCooling = false;
-    }
-
-    public void FaceDirection(Vector2 dir)
-    {
-        if(dir.x > 0)
-            transform.localScale = new Vector3(1, 1, 1);
-        else if(dir.x < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
-        
-        Debug.Log($"{gameObject.name} is looking at  player");
     }
 
     private void OnCollisionEnter2D(Collision2D col)
