@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7736158038927296847}
   - component: {fileID: 1541079205154551539}
   m_Layer: 9
-  m_Name: Enemy Healthbars
+  m_Name: Big Enemy Healthbars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
