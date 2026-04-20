@@ -11,10 +11,9 @@ public class PlayerStats : MonoBehaviour
     
     public delegate void OnHealthChanged();
     public event OnHealthChanged onHealthChanged;
-
-<<<<<<< HEAD
+    
     public static bool isDead = false;
-=======
+
     [Header("Knockback")]
     public float knockbackForce = 3f;
     public float knockbackTime = 0.2f;
@@ -24,7 +23,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] public SpriteRenderer playerSp;
     [SerializeField] public PlayerMovement move;
->>>>>>> Enemy
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
