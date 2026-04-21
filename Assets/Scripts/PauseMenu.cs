@@ -59,11 +59,12 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(isPaused);
         
     }
-
+    //added pause BGM
     public void PauseGame()
     {
         Time.timeScale = 0f;
         isPaused = true;
+        MusicManager.PauseBackgroundMusic();
     }
 
     public void QuitGame()
@@ -75,7 +76,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu"); 
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void RestartGame()
@@ -84,9 +85,12 @@ public class PauseMenu : MonoBehaviour
         //Destroy(GameObject.FindGameObjectWithTag("Player"));
         Time.timeScale = 1f;
         string scene = SceneManager.GetActiveScene().name;
-        
+
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
-        PlayerMovement.isFacingRight = true; 
+        PlayerMovement.isFacingRight = true;
+
+        MusicManager.PlayBackgroundMusic(false);
+
     }
 
     public void RestartGameDied()
