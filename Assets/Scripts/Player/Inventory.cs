@@ -7,6 +7,28 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    //audio check
+    [Header("Audio")]
+    public AudioClip buttonClickSound;
+    void PlayButtonSound()
+    {
+        if (buttonClickSound != null)
+        {
+            GameObject tempAudio = new GameObject("UIButtonSound");
+            tempAudio.transform.position = Vector3.zero;
+
+            AudioSource aSource = tempAudio.AddComponent<AudioSource>();
+            aSource.clip = buttonClickSound;
+
+            // Slight pitch variation for nicer feel
+            aSource.pitch = Random.Range(0.9f, 1.1f);
+            aSource.volume = 1f;
+
+            aSource.Play();
+
+            Destroy(tempAudio, buttonClickSound.length);
+        }
+    }
     public class Entry { public string name; public int amount; public Entry(string n, int a) { name = n; amount = a; } }
 
     public static Inventory Instance { get; private set; }
@@ -264,6 +286,8 @@ public class Inventory : MonoBehaviour
 
             if (GUILayout.Button($"{i + 1}. {(n == "Empty" ? "(Empty)" : $"{n} x{amt}")}", GUILayout.Height(40)))
             {
+                PlayButtonSound();
+
                 if (n != "Empty") UseItem(n, 1); // mouse click use
             }
             GUILayout.EndVertical();
@@ -295,13 +319,15 @@ public class Inventory : MonoBehaviour
                 GUILayout.Label($"x{e.amount}", GUILayout.Width(60));
 
                 if (GUILayout.Button("Use", GUILayout.Width(50)))
+                    PlayButtonSound();
                     UseItem(e.name, 1);
 
                 GUILayout.Label("Assign:", GUILayout.Width(55));
                 for (int s = 0; s < 4; s++)
                 {
                     if (GUILayout.Button($"{s + 1}", GUILayout.Width(30)))
-                        SetQuickItem(s, e.name);
+                        PlayButtonSound();
+                    SetQuickItem(s, e.name);
                 }
             }
             else

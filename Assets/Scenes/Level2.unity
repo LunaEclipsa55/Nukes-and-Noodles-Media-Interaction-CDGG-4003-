@@ -939,10 +939,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4242048511104430917, guid: 32f3019c247ecef4290a6c28c5a51eba, type: 3}
-      propertyPath: m_GravityScale
-      value: 1.7
-      objectReference: {fileID: 0}
+    - target: {fileID: 4155966279332013843, guid: 32f3019c247ecef4290a6c28c5a51eba, type: 3}
+      propertyPath: captureSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f473666aa1792ab4384e975faea9769c, type: 3}
     - target: {fileID: 5291135404571679222, guid: 32f3019c247ecef4290a6c28c5a51eba, type: 3}
       propertyPath: diedUI
       value: 
@@ -3267,10 +3267,6 @@ PrefabInstance:
     - target: {fileID: 3660297755104449216, guid: 84d5a2b4a490ca94585b380927232585, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459231521866130094, guid: 84d5a2b4a490ca94585b380927232585, type: 3}
-      propertyPath: Loop
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

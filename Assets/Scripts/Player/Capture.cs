@@ -6,6 +6,27 @@ using UnityEngine.InputSystem;
 
 public class Capture : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioClip captureSound;
+    void PlayCaptureSound(Vector3 position)
+    {
+        if (captureSound != null)
+        {
+            GameObject tempAudio = new GameObject("CaptureSound");
+            tempAudio.transform.position = position;
+
+            AudioSource aSource = tempAudio.AddComponent<AudioSource>();
+            aSource.clip = captureSound;
+
+           
+            aSource.pitch = Random.Range(1f, 1.5f);
+            aSource.volume = 1f;
+
+            aSource.Play();
+
+            Destroy(tempAudio, captureSound.length);
+        }
+    }
     private Ray2D ray;
     [SerializeField] private int maxDistance; 
     public Collider2D playerCollider;
@@ -100,6 +121,7 @@ public class Capture : MonoBehaviour
                     inv.SetQuickItem(1, beeAbility.bulletName);
                     if (added)
                     {
+                        PlayCaptureSound(hits[i].transform.position);
                         ScoreManager.Instance.AddScore(5);
                         Destroy(hits[i].transform.gameObject);
                     }
@@ -112,7 +134,9 @@ public class Capture : MonoBehaviour
                     if (!inv) return;
                     
                     PlayerMovement.levitateAbility = true;
-                    
+
+                    PlayCaptureSound(hits[i].transform.position);
+
                     inv.SetQuickItem(2, hits[i].collider.name);
                     
                     Destroy(hits[i].transform.gameObject);

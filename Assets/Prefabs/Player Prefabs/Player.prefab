@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f3cca6da0b31f4085458830112ba92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonClickSound: {fileID: 8300000, guid: 34be2aa48592afa4ea2e52985ff591c1, type: 3}
   playerStats: {fileID: 5291135404571679222}
   playerGun: {fileID: 1836934439479364826}
   toggleInventoryKey: 105
@@ -225,6 +226,10 @@ MonoBehaviour:
   health: 3
   healthMax: 3
   diedUI: {fileID: 0}
+  knockbackForce: 3
+  knockbackTime: 0.2
+  playerSp: {fileID: 0}
+  move: {fileID: 0}
 --- !u!114 &6145939736149510175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b36cab957310c44bf0eecce9487f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  captureSound: {fileID: 8300000, guid: f473666aa1792ab4384e975faea9769c, type: 3}
   maxDistance: 3
   playerCollider: {fileID: 7389775700930037654}
   startLaser: {fileID: 1130445544204555923}
@@ -298,7 +304,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 1.7
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
