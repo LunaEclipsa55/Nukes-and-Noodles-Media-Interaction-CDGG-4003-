@@ -28,7 +28,7 @@ public class Door : MonoBehaviour
         Debug.Log(ctx.action.name + " clicked");
         if (isInsideTrigger && ctx.performed)
         {
-            int score = ScoreManager.score;
+            int score = ScoreManager.Instance.Score;
             scoreText.text = "SCORE  : " + score.ToString();
             wonUI.SetActive(true);
             Time.timeScale = 0f;

@@ -7,6 +7,7 @@
 
 // FOR THIS SCRIPT TO WORK THE GROUND THAT THE PLAYER IS ON NEED TO BE ON THE GROUND LAYER
 using System;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,13 +19,25 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDirection;
     public float LastOnGroundTime { get; private set; }
     public float LastPressedJumpTime { get; private set; }
+    
+    public static PlayerMovement Instance { get; private set; }
+
 
     private bool isJumping;
+    private bool isGrounded;
+
+    private bool isLevitating; 
+    private bool canLeviateJump;
+    
+    public static bool levitateAbility { get; set; }
+    
     public static bool isFacingRight = true;
 
     [Header("Input")]
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference jump;
+    [SerializeField] private InputActionReference levitate;
+
 
     
     [SerializeField] private Transform groundCheckPoint;
@@ -34,53 +47,58 @@ public class PlayerMovement : MonoBehaviour
     //Animator 
     [SerializeField] private Animator _animator;
 
-    //Audio
-    [Header("Audio")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip walkSound;
-    [SerializeField] private AudioClip jumpSound;
-    private float lastMoveInput = 0f;
-
     private void FixedUpdate()
     {
         Run();
+        
+        //Test Levitating
+        if (isLevitating && !isGrounded)
+        {
+            if (rb.linearVelocity.y < -2f) // only when falling
+            {
+                rb.AddForce(Vector2.up * 50f);
+            }
+            
+        }
+
+        if (canLeviateJump)
+        {
+            LevitateJump();
+            canLeviateJump = false;
+        }
     }
 
     private void Awake()
     {
+        levitateAbility = false;
         rb = GetComponent<Rigidbody2D>();
-
-        if (audioSource == null)
-            audioSource = GetComponent<AudioSource>();
-        rb = GetComponent<Rigidbody2D>();
-
-        
     }
     private void OnEnable()
     {
-        move.action.Enable(); 
         jump.action.Enable();
         jump.action.performed += OnJump;
+        
+        levitate.action.Enable();
+
+        levitate.action.started += OnLevitationStart;
+        levitate.action.canceled += OnLevitationCanceled;
+
     }
 
     private void OnDisable()
     {
-        move.action.Disable(); 
         jump.action.performed -= OnJump;
         jump.action.Disable();
-    }
 
-  
+        levitate.action.started -= OnLevitationStart;
+        levitate.action.canceled -= OnLevitationCanceled;
+
+        levitate.action.Disable();
+    }
+    
     void Update()
     {
-        //walking sound
-        if (moveDirection.x != 0 && lastMoveInput == 0)
-        {
-            audioSource.PlayOneShot(walkSound);
-        }
-
-        lastMoveInput = moveDirection.x;
-
+        
         // Read movement input
         moveDirection = move.action.ReadValue<Vector2>();
 
@@ -93,36 +111,39 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("isRunning", false);
         }
 
+        //Read levitation input
+        if (levitate.action.ReadValue<float>() > 0.0 && levitateAbility)
+        {
+            isLevitating = true;
+        } else
+        {
+            isLevitating = false;   
+        }
+
         // Tick timers
         LastOnGroundTime -= Time.deltaTime;
         LastPressedJumpTime -= Time.deltaTime;
 
-        
         // Ground check
         if (Physics2D.OverlapBox(groundCheckPoint.position, groundCheckSize, 0, groundLayer))
         {
             LastOnGroundTime = Data.coyoteTime;
             isJumping = false;
+            isGrounded = true; 
 
         }
-      
         
-
-        // if (Input.GetKeyDown(KeyCode.Space) && isJumping)
-        // {
-        //     Physics.gravity = new Vector3(0, -1.0f, 0);
-        //     
-        // } was trying to play with levitating 
 
         // Reset jump state when falling
         if (isJumping && rb.linearVelocity.y < 0)
+        {
             isJumping = false;
+        }
 
         // Attempt jump
-        if (LastOnGroundTime > 0 && LastPressedJumpTime > 0 && !isJumping)
+        if (LastOnGroundTime > 0 && LastPressedJumpTime > 0 && !isJumping && isGrounded)
         {
             Jump();
-            audioSource.PlayOneShot(jumpSound);
         }
             
         if (moveDirection.x < 0 && isFacingRight)
@@ -134,6 +155,16 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
 
+        
+    }
+
+    private void OnLevitationStart(InputAction.CallbackContext ctx)
+    {
+        
+    } 
+
+    private void OnLevitationCanceled(InputAction.CallbackContext ctx)
+    {
         
     }
 
@@ -173,9 +204,27 @@ public class PlayerMovement : MonoBehaviour
         } 
         
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
-
+        
         isJumping = true;
-        audioSource.PlayOneShot(jumpSound);
+        isGrounded = false;
+    }
+
+    private void TurnOnLevitate()
+    {
+        levitateAbility = true; 
+    }
+    
+    private void LevitateJump()
+    {
+        float force = Data.jumpForce * 0.8f; // slightly weaker than normal jump
+
+        // Reset downward velocity so jump feels responsive
+        if (rb.linearVelocity.y < 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+        }
+
+        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
     }
 
     private bool CanJump()
@@ -189,6 +238,12 @@ public class PlayerMovement : MonoBehaviour
         if (ctx.performed)
         {
             LastPressedJumpTime = Data.jumpInputBufferTime;
+            
+            //Ability to boost while levitating
+            if (isLevitating && !isGrounded)
+            {
+                canLeviateJump = true; 
+            }
 
         }
     }

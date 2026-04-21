@@ -20,6 +20,6 @@ MonoBehaviour:
   accelInAir: 0.11
   deccelInAir: 0.01
   doConserveMomentum: 1
-  jumpForce: 8
+  jumpForce: 8.5
   coyoteTime: 0.1
   jumpInputBufferTime: 0.1
