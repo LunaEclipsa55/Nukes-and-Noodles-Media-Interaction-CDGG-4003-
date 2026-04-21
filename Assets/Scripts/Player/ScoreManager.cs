@@ -6,13 +6,25 @@ using System.Xml.Serialization;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager Instance { get; private set; }
+
     public Text scoreText;
 
-    public static int score = 0;
+    public int Score { get; private set; }
+    
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
     
     void Start()
     {
-        scoreText.text = "SCORE  : " + score.ToString();
+        scoreText.text = "SCORE  : " + Score.ToString();
     }
 
     void Update()
@@ -21,8 +33,15 @@ public class ScoreManager : MonoBehaviour
     
     public void AddScore(int scoreAmount)
     {
-        score = score += scoreAmount;
-        scoreText.text = "SCORE  : " + score.ToString();
+        Score += scoreAmount;
+        scoreText.text = "SCORE  : " + Score.ToString();
+
+    }
+
+    public void ResetScore()
+    {
+        Score = 0;
+        scoreText.text = "SCORE  : " + Score.ToString();
 
     }
 }

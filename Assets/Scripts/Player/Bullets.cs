@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Bullets : MonoBehaviour
 {
-    public int damage = 10;
-    public float life = 5f;
+    public int damage;
+    public float life;
 
     Rigidbody2D rb;
     bool hit;
