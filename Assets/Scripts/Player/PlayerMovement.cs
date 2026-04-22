@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     
     public static bool levitateAbility { get; set; }
     
-    public static bool isFacingRight = true;
+      public static bool isFacingRight = true;
 
     [Header("Input")]
     [SerializeField] private InputActionReference move;
