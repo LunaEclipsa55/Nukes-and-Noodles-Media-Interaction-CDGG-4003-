@@ -144,6 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6855bb157c7942b41ad5f67b59067ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSound: {fileID: 8300000, guid: 5861c0945090b6e4d8f32c30dfddaea6, type: 3}
+  walkSound: {fileID: 8300000, guid: 126853fc1191f7a4ca037190a5d59149, type: 3}
+  footstepInterval: 0.4
   Data: {fileID: 11400000, guid: 38c5aac2970330a4295ecb256de37f79, type: 2}
   move: {fileID: 1086278882966601072, guid: ddfb164c4d6af934bae25cecd95ae80a, type: 3}
   jump: {fileID: 4534045543086771326, guid: ddfb164c4d6af934bae25cecd95ae80a, type: 3}

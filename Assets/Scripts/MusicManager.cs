@@ -29,6 +29,7 @@ public class MusicManager : MonoBehaviour
         {
             PlayBackgroundMusic(false, backgroundMusic);
         }
+        audioSource.volume = 0.1f;
         musicSlider.onValueChanged.AddListener(delegate { SetVolume(musicSlider.value); });
 
     }

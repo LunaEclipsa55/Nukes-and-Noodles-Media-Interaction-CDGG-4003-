@@ -1,36 +1,30 @@
-/*TODO:
- - make movement more satifying by improving the speed acceleration etc
- - add animations
- - create levitating ability 
- */
-
-
-// FOR THIS SCRIPT TO WORK THE GROUND THAT THE PLAYER IS ON NEED TO BE ON THE GROUND LAYER
 using System;
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioClip jumpSound;
+    public AudioClip walkSound;
+
+    private float footstepTimer;
+    public float footstepInterval = 0.4f;
+
     public PlayerData Data;
     public Rigidbody2D rb { get; private set; }
-    
+
     private Vector2 moveDirection;
     public float LastOnGroundTime { get; private set; }
     public float LastPressedJumpTime { get; private set; }
-    
-    public static PlayerMovement Instance { get; private set; }
-
 
     private bool isJumping;
     private bool isGrounded;
 
-    private bool isLevitating; 
+    private bool isLevitating;
     private bool canLeviateJump;
-    
+
     public static bool levitateAbility { get; set; }
-    
     public static bool isFacingRight = true;
 
     [Header("Input")]
@@ -38,51 +32,26 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference jump;
     [SerializeField] private InputActionReference levitate;
 
-
-    
     [SerializeField] private Transform groundCheckPoint;
     [SerializeField] private Vector2 groundCheckSize = new Vector2(0.49f, 0.03f);
     [SerializeField] private LayerMask groundLayer;
 
-    //Animator 
     [SerializeField] private Animator _animator;
-
-    private void FixedUpdate()
-    {
-        Run();
-        
-        //Test Levitating
-        if (isLevitating && !isGrounded)
-        {
-            if (rb.linearVelocity.y < -2f) // only when falling
-            {
-                rb.AddForce(Vector2.up * 50f);
-            }
-            
-        }
-
-        if (canLeviateJump)
-        {
-            LevitateJump();
-            canLeviateJump = false;
-        }
-    }
 
     private void Awake()
     {
         levitateAbility = false;
         rb = GetComponent<Rigidbody2D>();
     }
+
     private void OnEnable()
     {
         jump.action.Enable();
         jump.action.performed += OnJump;
-        
-        levitate.action.Enable();
 
+        levitate.action.Enable();
         levitate.action.started += OnLevitationStart;
         levitate.action.canceled += OnLevitationCanceled;
-
     }
 
     private void OnDisable()
@@ -92,35 +61,21 @@ public class PlayerMovement : MonoBehaviour
 
         levitate.action.started -= OnLevitationStart;
         levitate.action.canceled -= OnLevitationCanceled;
-
         levitate.action.Disable();
     }
-    
+
     void Update()
     {
         
-        // Read movement input
         moveDirection = move.action.ReadValue<Vector2>();
 
-        if (moveDirection != Vector2.zero)
-        {
-            _animator.SetBool("isRunning", true);
-        }
-        else
-        {
-            _animator.SetBool("isRunning", false);
-        }
+        // Animator
+        _animator.SetBool("isRunning", moveDirection != Vector2.zero);
 
-        //Read levitation input
-        if (levitate.action.ReadValue<float>() > 0.0 && levitateAbility)
-        {
-            isLevitating = true;
-        } else
-        {
-            isLevitating = false;   
-        }
+        // Levitation input
+        isLevitating = levitate.action.ReadValue<float>() > 0.0f && levitateAbility;
 
-        // Tick timers
+        // Timers
         LastOnGroundTime -= Time.deltaTime;
         LastPressedJumpTime -= Time.deltaTime;
 
@@ -129,10 +84,12 @@ public class PlayerMovement : MonoBehaviour
         {
             LastOnGroundTime = Data.coyoteTime;
             isJumping = false;
-            isGrounded = true; 
-
+            isGrounded = true;
         }
-        
+        else
+        {
+            isGrounded = false;
+        }
 
         // Reset jump state when falling
         if (isJumping && rb.linearVelocity.y < 0)
@@ -145,32 +102,66 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
-            
-        if (moveDirection.x < 0 && isFacingRight)
-        {
-            Flip();
-        }
-        else if (moveDirection.x > 0 && !isFacingRight)
-        {
-            Flip();
-        }
 
-        
+        // Flip
+        if (moveDirection.x < 0 && isFacingRight) Flip();
+        else if (moveDirection.x > 0 && !isFacingRight) Flip();
+
+      
+        HandleFootsteps();
     }
 
-    private void OnLevitationStart(InputAction.CallbackContext ctx)
+    private void FixedUpdate()
     {
-        
-    } 
+        Run();
 
-    private void OnLevitationCanceled(InputAction.CallbackContext ctx)
+        if (isLevitating && !isGrounded)
+        {
+            if (rb.linearVelocity.y < -2f)
+            {
+                rb.AddForce(Vector2.up * 50f);
+            }
+        }
+
+        if (canLeviateJump)
+        {
+            LevitateJump();
+            canLeviateJump = false;
+        }
+    }
+
+    void HandleFootsteps()
     {
-        
+        bool isMovingHorizontally = Mathf.Abs(moveDirection.x) > 0.1f;
+
+        if (isMovingHorizontally && isGrounded)
+        {
+            footstepTimer -= Time.deltaTime;
+
+            if (footstepTimer <= 0f)
+            {
+                PlayFootstep();
+
+               
+                footstepTimer = footstepInterval + UnityEngine.Random.Range(-0.05f, 0.05f);
+            }
+        }
+        else
+        {
+            footstepTimer = 0.1f;
+        }
+    }
+
+    void PlayFootstep()
+    {
+        if (walkSound != null)
+        {
+            AudioSource.PlayClipAtPoint(walkSound, transform.position);
+        }
     }
 
     private void Run()
-    {   
-        
+    {
         float targetSpeed = moveDirection.x * Data.runMaxSpeed;
 
         float accelRate;
@@ -178,13 +169,12 @@ public class PlayerMovement : MonoBehaviour
             accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? Data.runAccelAmount : Data.runDeccelAmount;
         else
             accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? Data.runAccelAmount * Data.accelInAir : Data.runDeccelAmount * Data.deccelInAir;
-        
-        
+
         float speedDif = targetSpeed - rb.linearVelocity.x;
-        float movement = speedDif * accelRate;        
+        float movement = speedDif * accelRate;
         rb.AddForce(movement * Vector2.right);
     }
-    
+
     private void Flip()
     {
         isFacingRight = !isFacingRight;
@@ -195,30 +185,30 @@ public class PlayerMovement : MonoBehaviour
     {
         LastOnGroundTime = 0;
         LastPressedJumpTime = 0;
-        
+
         float force = Data.jumpForce;
 
         if (rb.linearVelocity.y < 0)
         {
             force -= rb.linearVelocity.y * moveDirection.y;
-        } 
-        
+        }
+
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+
         
+        if (jumpSound != null)
+        {
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
+        }
+
         isJumping = true;
         isGrounded = false;
     }
 
-    private void TurnOnLevitate()
-    {
-        levitateAbility = true; 
-    }
-    
     private void LevitateJump()
     {
-        float force = Data.jumpForce * 0.8f; // slightly weaker than normal jump
+        float force = Data.jumpForce * 0.8f;
 
-        // Reset downward velocity so jump feels responsive
         if (rb.linearVelocity.y < 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
@@ -227,34 +217,21 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
     }
 
-    private bool CanJump()
-    {
-        return LastOnGroundTime > 0 && !isJumping && LastPressedJumpTime > 0;
-    }
-
     private void OnJump(InputAction.CallbackContext ctx)
     {
-        Debug.Log("OnJump");
         if (ctx.performed)
         {
             LastPressedJumpTime = Data.jumpInputBufferTime;
-            
-            //Ability to boost while levitating
+
             if (isLevitating && !isGrounded)
             {
-                canLeviateJump = true; 
+                canLeviateJump = true;
             }
+        }
+    }
 
-        }
-    }
-    
-    private void OnActionTriggered(InputAction.CallbackContext ctx)
-    {
-        if (ctx.action.name == "Horizontal")
-        {
-            
-        }
-    }
+    private void OnLevitationStart(InputAction.CallbackContext ctx) { }
+    private void OnLevitationCanceled(InputAction.CallbackContext ctx) { }
 
     private void OnDrawGizmosSelected()
     {

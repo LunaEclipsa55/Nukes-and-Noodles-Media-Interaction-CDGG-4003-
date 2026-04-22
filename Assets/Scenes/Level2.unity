@@ -939,10 +939,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4155966279332013843, guid: 32f3019c247ecef4290a6c28c5a51eba, type: 3}
-      propertyPath: captureSound
-      value: 
-      objectReference: {fileID: 8300000, guid: f473666aa1792ab4384e975faea9769c, type: 3}
     - target: {fileID: 5291135404571679222, guid: 32f3019c247ecef4290a6c28c5a51eba, type: 3}
       propertyPath: diedUI
       value: 
@@ -2254,6 +2250,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3834664169236743288, guid: 17197ca52586a5a479783b9c7b1b9625, type: 3}
+      propertyPath: m_Value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834664169236743288, guid: 17197ca52586a5a479783b9c7b1b9625, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5082873485168940727, guid: 17197ca52586a5a479783b9c7b1b9625, type: 3}
       propertyPath: m_Pivot.x
       value: 0
