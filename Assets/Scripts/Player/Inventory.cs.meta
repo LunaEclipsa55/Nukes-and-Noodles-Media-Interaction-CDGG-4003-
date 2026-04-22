@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: b7f3cca6da0b31f4085458830112ba92
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - buttonClickSound: {fileID: 8300000, guid: 34be2aa48592afa4ea2e52985ff591c1, type: 3}
+  - playerStats: {instanceID: 0}
+  - playerGun: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

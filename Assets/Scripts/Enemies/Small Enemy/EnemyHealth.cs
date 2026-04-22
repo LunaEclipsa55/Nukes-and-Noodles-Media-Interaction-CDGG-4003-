@@ -5,10 +5,13 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     public int Health;
     HealthBar healthBar;
-
+    public AudioClip deathSound;
+    private AudioSource audioSource;
     private void Awake()
     {
         healthBar =  GetComponentInChildren<HealthBar>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,7 +41,25 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         ScoreManager.Instance.AddScore(10);
-        gameObject.SetActive(false);
+
+        if (deathSound != null)
+        {
+            GameObject tempAudio = new GameObject("TempAudio");
+            tempAudio.transform.position = transform.position;
+
+            AudioSource aSource = tempAudio.AddComponent<AudioSource>();
+            aSource.clip = deathSound;
+
+            // Randomize pitch
+            aSource.pitch = Random.Range(0.8f, 1.2f);
+
+            aSource.Play();
+
+            Destroy(tempAudio, deathSound.length);
+        }
+
         Debug.Log($"{gameObject.name} dies.");
+
+        Destroy(gameObject);
     }
 }
