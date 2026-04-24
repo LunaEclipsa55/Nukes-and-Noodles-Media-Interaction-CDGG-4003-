@@ -95,6 +95,28 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
+    public void AddToQuickbar(string name)
+    {
+        //if item is in quickbar, do nothing
+        for (int i = 0; i < quickbar.Count; i++)
+        {
+            if (quickbar[i] == name)
+            return;
+        }
+
+        // Put item in first empty quickbar slot
+        for (int i = 0; i < quickbar.Count; i++)
+        {
+            if (quickbar[i] == "Empty")
+            {
+                quickbar[i] = name;
+                return;
+            }
+        }
+
+        ShowPopup("Quickbar is full!");
+    }
+
     public bool AddToInventory(int amount, string item)
     {
         if (amount <= 0 || string.IsNullOrEmpty(item)) return false;
@@ -103,6 +125,7 @@ public class Inventory : MonoBehaviour
         if (node != null)
         {
             node.Value.amount += amount;
+            AddToQuickbar(item);
             return true;
         }
 
@@ -114,6 +137,7 @@ public class Inventory : MonoBehaviour
         }
 
         items.AddLast(new Entry(item, amount));
+        AddToQuickbar(item);
         return true;
     }
 
@@ -297,12 +321,12 @@ public class Inventory : MonoBehaviour
                 if (GUILayout.Button("Use", GUILayout.Width(50)))
                     UseItem(e.name, 1);
 
-                GUILayout.Label("Assign:", GUILayout.Width(55));
-                for (int s = 0; s < 4; s++)
-                {
-                    if (GUILayout.Button($"{s + 1}", GUILayout.Width(30)))
-                        SetQuickItem(s, e.name);
-                }
+                // GUILayout.Label("Assign:", GUILayout.Width(55));
+                // for (int s = 0; s < 4; s++)
+                // {
+                //     if (GUILayout.Button($"{s + 1}", GUILayout.Width(30)))
+                //         SetQuickItem(s, e.name);
+                // }
             }
             else
             {

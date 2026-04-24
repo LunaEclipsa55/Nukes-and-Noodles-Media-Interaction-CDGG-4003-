@@ -196,7 +196,7 @@ MonoBehaviour:
     height: 300
   quickRect:
     serializedVersion: 2
-    x: 20
+    x: 200
     y: 833
     width: 520
     height: 80
