@@ -350,7 +350,7 @@ public class Inventory : MonoBehaviour
                 // for (int s = 0; s < 4; s++)
                 // {
                 //     if (GUILayout.Button($"{s + 1}", GUILayout.Width(30)))
-                        PlayButtonSound();
+                        //PlayButtonSound();
             //         SetQuickItem(s, e.name);
                 // }
             }
