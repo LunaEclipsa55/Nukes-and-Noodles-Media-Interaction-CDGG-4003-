@@ -33,12 +33,6 @@ public class Bullets : MonoBehaviour
     {
         if (hit) return;
 
-        // if (other.CompareTag("Player"))//enemy
-        // {
-        //     // Implement ability logic here, e.g., granting a power-up or triggering an effect
-        //     Debug.Log("Player has entered the ability trigger!");
-        // }
-
         EnemyHealth enemyHealth = other.GetComponentInParent<EnemyHealth>();
             
         if (enemyHealth != null)
@@ -50,7 +44,7 @@ public class Bullets : MonoBehaviour
             return;
         }
 
-        if(other.CompareTag("Wall") || other.CompareTag("Ground"))
+        if(other.CompareTag("Ground"))
         {
             hit = true;
             Destroy(gameObject);

@@ -76,6 +76,6 @@ public class PunchingLadybug : MonoBehaviour
     void Punch()
     {
         var stats = player.GetComponentInParent<PlayerStats>();
-        if(stats != null) stats.TakeDamage(damage); Debug.Log($"{gameObject.name} punched player for {damage}");
+        if(stats != null) stats.TakeDamage(damage);
     }
 }
