@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  life: 5
+  life: 1
 --- !u!114 &6921298735107898814
 MonoBehaviour:
   m_ObjectHideFlags: 0

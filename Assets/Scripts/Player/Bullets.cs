@@ -28,31 +28,31 @@ public class Bullets : MonoBehaviour
 
     }
 
-    void Gun()//maybe it own script instead of here?
-    {
-
-    }
-
     //for enemy helath maybe
     void OnTriggerEnter2D(Collider2D other)
     {
         if (hit) return;
-        hit = true;
 
-        if (other.CompareTag("Player"))//enemy
+        // if (other.CompareTag("Player"))//enemy
+        // {
+        //     // Implement ability logic here, e.g., granting a power-up or triggering an effect
+        //     Debug.Log("Player has entered the ability trigger!");
+        // }
+
+        EnemyHealth enemyHealth = other.GetComponentInParent<EnemyHealth>();
+            
+        if (enemyHealth != null)
         {
-            // Implement ability logic here, e.g., granting a power-up or triggering an effect
-            Debug.Log("Player has entered the ability trigger!");
+            hit = true;
+            enemyHealth.TakeDamage(damage);
+
+            Destroy(gameObject);
+            return;
         }
 
-        if (other.CompareTag("Enemy"))
+        if(other.CompareTag("Wall") || other.CompareTag("Ground"))
         {
-            var enemyHealth = other.GetComponentInParent<EnemyHealth>();
-            if (enemyHealth != null)
-            {
-               enemyHealth.TakeDamage(damage);
-            }
-
+            hit = true;
             Destroy(gameObject);
         }
     }

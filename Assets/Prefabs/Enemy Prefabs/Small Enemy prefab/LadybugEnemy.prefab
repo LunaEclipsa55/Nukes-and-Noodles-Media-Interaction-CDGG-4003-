@@ -214,6 +214,7 @@ MonoBehaviour:
   damage: 2
   cooldown: 1.5
   attackRange: 1.5
+  patrol: {fileID: 8248792708919870914}
 --- !u!114 &8248792708919870914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 15
   Health: 15
+  deathSound: {fileID: 0}
 --- !u!61 &6383509030935817979
 BoxCollider2D:
   m_ObjectHideFlags: 0

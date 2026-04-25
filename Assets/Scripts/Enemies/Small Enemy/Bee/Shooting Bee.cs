@@ -52,11 +52,27 @@ public class ShootingBee : MonoBehaviour
         if (patrol != null)
             patrol.enabled = false;
 
+        FacePlayer();
+
         if(shootTimer <= 0f)
         {
             Shoot();
             shootTimer = shootcool;
         }
+    }
+
+    void FacePlayer()
+    {
+        if (!player) return;
+
+        Vector3 scale = transform.localScale;
+
+        if (player.position.x > transform.position.x)
+            scale.x = Mathf.Abs(scale.x);   // face right
+        else if (player.position.x < transform.position.x)
+            scale.x = -Mathf.Abs(scale.x);  // face left
+
+        transform.localScale = scale;
     }
 
     void Shoot()
