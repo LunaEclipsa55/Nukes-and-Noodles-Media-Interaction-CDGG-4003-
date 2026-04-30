@@ -14,8 +14,8 @@ public class Door : MonoBehaviour
     public Text scoreText;
 
     public GameObject player;
-    public GameObject camera;
-    public GameObject HUD;
+    
+    public Transform spawnPoint;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -58,10 +58,8 @@ public class Door : MonoBehaviour
         {
             Debug.Log("Nextstage clicked");
 
-            DontDestroyOnLoad(player);
-            DontDestroyOnLoad(camera);
-            DontDestroyOnLoad(HUD);
-            SceneManager.LoadScene("Level3 Boss");
+           
+            player.transform.position = spawnPoint.position;
 
 
         }
