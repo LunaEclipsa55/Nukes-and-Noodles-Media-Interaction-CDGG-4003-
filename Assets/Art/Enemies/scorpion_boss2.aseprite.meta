@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f92522e40d8e9b940b06682adc824d8a
+guid: 020823caab32d7b4a96017058988a31d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 32
+    spritePixelsToUnits: 64
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639090400367383961
+  platformSettingsDirtyTick: 639130605515620491
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,9 +122,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Sprite-0001-Sheet
+  - name: Frame_0
     originalName: 
-    pivot: {x: 0.5032895, y: 0}
+    pivot: {x: 0.49206352, y: -0.0877193}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 608
-      height: 39
-    spriteID: ceda5171266e567408a2a7dcb3e41fc7
+      width: 63
+      height: 57
+    spriteID: c62b0b18369b9b540946497696048c1e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,21 +142,42 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -10, y: 4}
-  spriteSheetImportData:
-  - name: characterV1_0
+    uvTransform: {x: 4, y: 4}
+  - name: Frame_1
     originalName: 
-    pivot: {x: 0.35, y: 0.25}
+    pivot: {x: 0.48387095, y: -0.0925926}
     alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 69
+      width: 62
+      height: 54
+    spriteID: 291f2a49b71b67049a9cd26ee43ef033
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 69}
+  spriteSheetImportData:
+  - name: scorpion_boss2_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 0
-      y: 4
-      width: 64
-      height: 60
-    spriteID: bdc2364b8d9d7154695de32d0bb86e85
+      y: 64
+      width: 70
+      height: 64
+    spriteID: 6a30268a85c5a494f9d69810abdfaa48
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -165,187 +186,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: characterV1_1
+  - name: scorpion_boss2_1
     originalName: 
-    pivot: {x: 0.35, y: 0.25}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 64
-      y: 4
-      width: 64
-      height: 60
-    spriteID: 3c14bffa11f7c324593344e60d5e5acb
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: characterV1_2
-    originalName: 
-    pivot: {x: 0.35, y: 0.25}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 4
-      width: 64
-      height: 60
-    spriteID: 57d2f24d8a5e07440a5fd1e1bcd49412
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: characterV1_3
-    originalName: 
-    pivot: {x: 0.35, y: 0.25}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 4
-      width: 64
-      height: 60
-    spriteID: d8f7807214e48294e8d4ce92f6a17173
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: characterV1_4
-    originalName: 
-    pivot: {x: 0.35, y: 0.25}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 4
-      width: 64
-      height: 60
-    spriteID: f0b50d5c41a6b37418e8d64aca9a1a5d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: characterV1_5
-    originalName: 
-    pivot: {x: 0.35, y: 0.25}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 4
-      width: 64
-      height: 60
-    spriteID: e1c958b999613f24197355194f8cb26c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: characterV1_6
-    originalName: 
-    pivot: {x: 0.35, y: 0.25}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 4
-      width: 64
-      height: 60
-    spriteID: af84de39bf6d87f49966f91233daf18b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: characterV1_7
-    originalName: 
-    pivot: {x: 0.35, y: 0.25}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 4
-      width: 64
-      height: 60
-    spriteID: feac32be5af9514448c6bfc630d0ad8b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: characterV1_8
-    originalName: 
-    pivot: {x: 0.35, y: 0.25}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 4
-      width: 64
-      height: 60
-    spriteID: 322f4fcb2961f9640835b63c33a9f8d0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: characterV1_9
-    originalName: 
-    pivot: {x: 0.35, y: 0.25}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 4
-      width: 64
-      height: 60
-    spriteID: ef99755ec329b8042a2ec9fbe729e2aa
+      x: 0
+      y: 0
+      width: 70
+      height: 64
+    spriteID: b09603ec1746e374395c8e807934ea47
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -356,21 +209,30 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -2020137281
-    name: Sprite-0001-Sheet
+    guid: -817583247
+    name: scorpion_boss2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: characterV1
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 14
-        y: 0
-        width: 622
-        height: 39
-      spriteId: ceda5171266e567408a2a7dcb3e41fc7
+        x: 1
+        y: 5
+        width: 63
+        height: 57
+      spriteId: c62b0b18369b9b540946497696048c1e
+    - name: Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 62
+        height: 54
+      spriteId: 291f2a49b71b67049a9cd26ee43ef033
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -413,4 +275,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 640, y: 64}
+  canvasSize: {x: 64, y: 64}

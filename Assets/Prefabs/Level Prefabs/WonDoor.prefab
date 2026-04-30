@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4772534411750098494}
   - component: {fileID: 8948458272241758695}
   - component: {fileID: 5236592578992036892}
-  m_Layer: 3
-  m_Name: Door
+  m_Layer: 6
+  m_Name: WonDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.30682305, g: 0.08036668, b: 0.3962264, a: 1}
+  m_Color: {r: 0.9005055, g: 0.7685564, b: 0.9528302, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -157,6 +157,7 @@ MonoBehaviour:
   interact: {fileID: 9133662172906088768, guid: ddfb164c4d6af934bae25cecd95ae80a, type: 3}
   wonUI: {fileID: 8433601065857126485}
   scoreText: {fileID: 576589219302717308}
+  player: {fileID: 0}
 --- !u!222 &8948458272241758695
 CanvasRenderer:
   m_ObjectHideFlags: 0
