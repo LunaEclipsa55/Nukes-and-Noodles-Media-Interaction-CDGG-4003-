@@ -133,6 +133,8 @@ public class Capture : MonoBehaviour
                     var inv = Inventory.Instance;
                     if (!inv) return;
                     
+                    ScoreManager.Instance.AddScore(5);
+
                     PlayerMovement.levitateAbility = true;
 
                     PlayCaptureSound(hits[i].transform.position);
@@ -140,6 +142,20 @@ public class Capture : MonoBehaviour
                     inv.SetQuickItem(2, hits[i].collider.name);
                     
                     Destroy(hits[i].transform.gameObject);
+                    
+                }
+
+                if (hits[i].collider.GetComponent<WhispyWasp>())
+                {
+                    
+                    ScoreManager.Instance.AddScore(5);
+
+                    Destroy(hits[i].transform.gameObject);
+
+                }
+
+                if (hits[i].collider.GetComponent<ChargingBeetle>())
+                {
                     
                 }
             }

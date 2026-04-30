@@ -28,7 +28,7 @@ public class Patrol : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
             }
-            Debug.Log($"{gameObject.name} is looking at  player");
+            //Debug.Log($"{gameObject.name} is looking at  player");
         }
     }
 }

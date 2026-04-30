@@ -14,15 +14,15 @@ public class Door : MonoBehaviour
     public Text scoreText;
 
     public GameObject player;
+    public GameObject camera;
+    public GameObject HUD;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "WonDoor")
+        if (CompareTag("WonDoor"))
         {
             isInsideTrigger = true;
-        }
-
-        if (other.CompareTag("NextLevel"))
+        } else if (CompareTag("NextLevel"))
         {
             Debug.Log("Nextstage enter");
 
@@ -32,12 +32,12 @@ public class Door : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name == "WonDoor")
+        if (CompareTag("WonDoor"))
         {
             isInsideTrigger = false;
         }
 
-        if (other.CompareTag("NextLevel"))
+        if (CompareTag("NextLevel"))
         {
             Debug.Log("Nextstage exit");
             isInsideNextStageTrigger = false;
@@ -46,18 +46,21 @@ public class Door : MonoBehaviour
 
     void OnInteract(InputAction.CallbackContext ctx)
     {
+        if (!ctx.performed) return;
         Debug.Log(ctx.action.name + " clicked");
-        if (isInsideTrigger && ctx.performed)
+        if (isInsideTrigger)
         {
             int score = ScoreManager.Instance.Score;
             scoreText.text = "SCORE  : " + score.ToString();
             wonUI.SetActive(true);
             Time.timeScale = 0f;
-        }
-
-        if (isInsideNextStageTrigger && ctx.performed)
+        } else if (isInsideNextStageTrigger)
         {
+            Debug.Log("Nextstage clicked");
+
             DontDestroyOnLoad(player);
+            DontDestroyOnLoad(camera);
+            DontDestroyOnLoad(HUD);
             SceneManager.LoadScene("Level3 Boss");
 
 
