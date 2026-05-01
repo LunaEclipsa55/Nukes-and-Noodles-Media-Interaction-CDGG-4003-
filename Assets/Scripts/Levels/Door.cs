@@ -7,6 +7,8 @@ public class Door : MonoBehaviour
 {
     private bool isInsideTrigger = false;
     private bool isInsideNextStageTrigger = false;
+    
+    public static bool hasKey = false;
 
     [Header("Input")] public InputActionReference interact;
 
@@ -48,7 +50,7 @@ public class Door : MonoBehaviour
     {
         if (!ctx.performed) return;
         Debug.Log(ctx.action.name + " clicked");
-        if (isInsideTrigger)
+        if (isInsideTrigger && hasKey)
         {
             int score = ScoreManager.Instance.Score;
             scoreText.text = "SCORE  : " + score.ToString();

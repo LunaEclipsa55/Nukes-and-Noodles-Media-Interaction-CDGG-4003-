@@ -38,6 +38,11 @@ public int maxHealth = 50;
     void Die()
     {
         gameObject.SetActive(false);
+
+        if (gameObject.name == "Big Boss 2")
+        {
+            Door.hasKey = true;
+        }
         Debug.Log($"{gameObject.name} dies.");
     }
 }
