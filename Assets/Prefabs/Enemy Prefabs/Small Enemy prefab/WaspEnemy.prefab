@@ -155,6 +155,9 @@ MonoBehaviour:
   speed: 2
   distance: 5
   groundDetection: {fileID: 3432556756068242649}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!61 &3890988154619077190
 BoxCollider2D:
   m_ObjectHideFlags: 0

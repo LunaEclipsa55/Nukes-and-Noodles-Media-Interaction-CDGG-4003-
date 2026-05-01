@@ -230,6 +230,9 @@ MonoBehaviour:
   speed: 2
   distance: 5
   groundDetection: {fileID: 3704512464420991676}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &3098856387058786398
 MonoBehaviour:
   m_ObjectHideFlags: 0
